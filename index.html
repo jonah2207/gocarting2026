@@ -143,37 +143,58 @@
         padding: 2rem 1.5rem;
     }
 }
-// --- Form Submission Handling ---
-const bookingForm = document.querySelector('.f1-form');
+// --- Live Form Submission Handling with Formspree ---
+const bookingForm = document.getElementById('booking-form');
 const submitBtn = bookingForm.querySelector('button[type="submit"]');
 const btnSpan = submitBtn.querySelector('span');
 
-bookingForm.addEventListener('submit', function(e) {
-    // Stop the page from reloading
+bookingForm.addEventListener('submit', async function(e) {
+    // 1. Stop the page from reloading
     e.preventDefault();
 
-    // 1. Change button to a "loading" state
-    submitBtn.style.backgroundColor = '#eab308'; // Yellow flag color
+    // 2. Yellow Flag: Change button to a "loading" state
+    submitBtn.style.backgroundColor = '#eab308'; 
     submitBtn.style.color = '#000';
     btnSpan.textContent = "Transmitting to Pit Wall...";
     submitBtn.disabled = true;
 
-    // 2. Simulate sending the data (2-second delay)
-    setTimeout(() => {
-        // 3. Show success state (Green Light)
-        submitBtn.style.backgroundColor = '#16a34a'; // Green flag color
+    // 3. Gather the form data
+    const formData = new FormData(bookingForm);
+
+    try {
+        // 4. Send the data to Formspree
+        const response = await fetch(bookingForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // 5. Green Flag: Success!
+            submitBtn.style.backgroundColor = '#16a34a'; 
+            submitBtn.style.color = '#fff';
+            btnSpan.textContent = "GREEN LIGHT! Booking Secured.";
+            bookingForm.reset(); // Clear the form
+        } else {
+            // Black Flag: Server error
+            submitBtn.style.backgroundColor = '#000'; 
+            submitBtn.style.color = '#fff';
+            btnSpan.textContent = "BLACK FLAG! Transmission Failed.";
+        }
+    } catch (error) {
+        // Black Flag: Network error
+        submitBtn.style.backgroundColor = '#000'; 
         submitBtn.style.color = '#fff';
-        btnSpan.textContent = "GREEN LIGHT! Booking Secured.";
-        
-        // 4. Reset the form fields
-        bookingForm.reset();
+        btnSpan.textContent = "BLACK FLAG! Pit Wall Unreachable.";
+    }
 
-        // 5. Reset button back to normal after 4 seconds
-        setTimeout(() => {
-            submitBtn.style.backgroundColor = ''; // Reverts to CSS default (Red)
-            submitBtn.disabled = false;
-            btnSpan.textContent = "Send to Race Control";
-        }, 4000);
-
-    }, 2000);
+    // 6. Reset button back to normal (Red) after 4 seconds
+    setTimeout(() => {
+        submitBtn.style.backgroundColor = ''; 
+        submitBtn.style.color = '';
+        submitBtn.disabled = false;
+        btnSpan.textContent = "Send to Race Control";
+    }, 4000);
 });
