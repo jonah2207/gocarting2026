@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex F4 Racing | Sunshine Coast</title>
-    <!-- Google Fonts for F1 style -->
     <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,226 +13,53 @@
             --font-display: 'Racing Sans One', sans-serif;
             --font-body: 'Titillium Web', sans-serif;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--f1-dark);
-            color: var(--f1-light);
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background-color: #000;
-            border-bottom: 3px solid var(--f1-red);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--f1-red);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--f1-red);
-        }
-
-        /* Button Style */
-        .btn {
-            background-color: var(--f1-red);
-            color: white;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            transform: skewX(-15deg);
-            display: inline-block;
-            transition: background 0.3s, transform 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn span {
-            display: block;
-            transform: skewX(15deg);
-        }
-
-        .btn:hover {
-            background-color: #ff1e16;
-            transform: skewX(-15deg) scale(1.05);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRJc9kLEl1LWvU90_AohQJFwzbKFFUXTgsLQ9gAwpgmThQu0v2pn-L88u82AFxlwJ9IunEQEQy9xNFEjp4') center/cover;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            line-height: 1;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-style: italic;
-            border-left: 5px solid var(--f1-red);
-            padding-left: 1rem;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background-color: var(--f1-red);
-            display: inline-block;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: #222;
-            padding: 2rem;
-            border-top: 4px solid var(--f1-red);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card h3 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--f1-red);
-        }
-
-        .card ul {
-            list-style: none;
-        }
-
-        .card ul li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .card ul li::before {
-            content: '►';
-            color: var(--f1-red);
-            position: absolute;
-            left: 0;
-            font-size: 0.8rem;
-            top: 4px;
-        }
-
-        .banner {
-            background-color: var(--f1-red);
-            text-align: center;
-            padding: 3rem 5%;
-            color: white;
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        footer {
-            background-color: #000;
-            padding: 2rem 5%;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
-
-        footer p {
-            color: #888;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--f1-dark); color: var(--f1-light); line-height: 1.6; }
         
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
-            .nav-links { display: none; }
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #000; border-bottom: 3px solid var(--f1-red); position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: var(--font-display); font-size: 2rem; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
+        .logo span { color: var(--f1-red); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--f1-red); }
+
+        .btn { background-color: var(--f1-red); color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; transform: skewX(-15deg); display: inline-block; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
+        .btn span { display: block; transform: skewX(15deg); }
+        .btn:hover { background-color: #ff1e16; transform: skewX(-15deg) scale(1.05); }
+
+        .hero { height: 90vh; background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRJc9kLEl1LWvU90_AohQJFwzbKFFUXTgsLQ9gAwpgmThQu0v2pn-L88u82AFxlwJ9IunEQEQy9xNFEjp4') center/cover; display: flex; align-items: center; padding: 0 5%; }
+        .hero-content { max-width: 800px; }
+        .hero h1 { font-family: var(--font-display); font-size: 5rem; line-height: 1; margin-bottom: 1rem; text-transform: uppercase; }
+        .hero p { font-size: 1.5rem; margin-bottom: 2rem; font-style: italic; border-left: 5px solid var(--f1-red); padding-left: 1rem; }
+
+        section { padding: 5rem 5%; }
+        .section-title { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+        .section-title::before { content: ''; width: 50px; height: 5px; background-color: var(--f1-red); display: inline-block; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background-color: #222; padding: 2rem; border-top: 4px solid var(--f1-red); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem; color: var(--f1-red); }
+        .card ul { list-style: none; }
+        .card ul li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+        .card ul li::before { content: '►'; color: var(--f1-red); position: absolute; left: 0; font-size: 0.8rem; top: 4px; }
+
+        .banner { background-color: var(--f1-red); text-align: center; padding: 3rem 5%; color: white; font-family: var(--font-display); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        footer { background-color: #000; padding: 2rem 5%; text-align: center; border-top: 1px solid #333; color: #888; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 3.5rem; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo">Apex<span>F4</span></a>
         <div class="nav-links">
+            <a href="pricing.html">Pricing & Times</a>
             <a href="index.html#track">The Circuit</a>
-            <a href="index.html#fleet">Our Cars</a>
         </div>
-        <!-- This button now links directly to booking.html -->
         <a href="booking.html" class="btn"><span>Book a Drive</span></a>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
             <h1>Experience True Downforce</h1>
@@ -242,13 +68,12 @@
         </div>
     </header>
 
-    <!-- The Fleet Section -->
     <section id="fleet">
         <h2 class="section-title">The Machinery</h2>
         <div class="grid">
             <div class="card">
                 <h3>Aero Package</h3>
-                <p>Equipped with front and rear wings just like Formula 1. The faster you drive, the harder the car sticks to the track. Experience mechanical grip like never before.</p>
+                <p>Equipped with front and rear wings just like Formula 1. The faster you drive, the harder the car sticks to the track.</p>
             </div>
             <div class="card">
                 <h3>Powertrain</h3>
@@ -261,45 +86,25 @@
             </div>
             <div class="card">
                 <h3>Cockpit</h3>
-                <p>Lie back in a carbon-fiber monocoque chassis. Featuring quick-release steering wheels, digital dash displays, and full 6-point racing harnesses.</p>
+                <p>Carbon-fiber monocoque chassis, quick-release steering wheels, digital dash displays, and 6-point racing harnesses.</p>
             </div>
         </div>
     </section>
 
-    <!-- Mid-page Banner -->
-    <div class="banner">
-        Stop Playing Games. Start Racing.
-    </div>
+    <div class="banner">Stop Playing Games. Start Racing.</div>
 
-    <!-- The Track Section -->
     <section id="track" style="background-color: #0a0a0f;">
         <h2 class="section-title">The Circuit</h2>
         <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem;">
-            Inspired by the legendary Big Kart Track layout, but scaled up and widened for true open-wheel racing. 1.2 kilometers of sweeping bends, aggressive hairpins, and a massive 400m straight where you can open the throttle wide.
+            Inspired by the Big Kart Track layout, scaled up and widened for true open-wheel racing. 1.2 kilometers of sweeping bends, aggressive hairpins, and a massive 400m straight.
         </p>
-        <div class="grid">
-            <div class="card" style="border-top-color: #fff;">
-                <h3 style="color: #fff;">Turn 1: The Sweeper</h3>
-                <p>A high-speed right-hander. Trust the downforce, trust the slick tires, and keep your foot pinned.</p>
-            </div>
-            <div class="card" style="border-top-color: #fff;">
-                <h3 style="color: #fff;">The Hairpin</h3>
-                <p>Heavy braking zone. Drop three gears with the paddle shift, hit the apex perfectly, and power out early.</p>
-            </div>
-            <div class="card" style="border-top-color: #fff;">
-                <h3 style="color: #fff;">Sector 3 Chicanes</h3>
-                <p>Test your reaction times. Quick left-right transitions demanding absolute precision to maintain momentum.</p>
-            </div>
-        </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="logo" style="margin-bottom: 1rem;">Apex<span>F4</span></div>
         <p>Sunshine Coast, QLD | Open 7 Days a Week</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing. Built for speed.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing.</p>
     </footer>
-
 </body>
 </html>
 <!DOCTYPE html>
@@ -307,8 +112,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Drive | Apex F4 Racing</title>
-    <!-- Google Fonts for F1 style -->
+    <title>Pricing & Times | Apex F4 Racing</title>
     <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -318,391 +122,422 @@
             --font-display: 'Racing Sans One', sans-serif;
             --font-body: 'Titillium Web', sans-serif;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--f1-dark); color: var(--f1-light); line-height: 1.6; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #000; border-bottom: 3px solid var(--f1-red); position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: var(--font-display); font-size: 2rem; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
+        .logo span { color: var(--f1-red); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--f1-red); }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--f1-dark);
-            color: var(--f1-light);
-            line-height: 1.6;
-        }
+        .btn { background-color: var(--f1-red); color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; transform: skewX(-15deg); display: inline-block; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
+        .btn span { display: block; transform: skewX(15deg); }
+        .btn:hover { background-color: #ff1e16; transform: skewX(-15deg) scale(1.05); }
 
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background-color: #000;
-            border-bottom: 3px solid var(--f1-red);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        .container { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+        .section-title::before { content: ''; width: 50px; height: 5px; background-color: var(--f1-red); display: inline-block; }
 
-        .logo {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        /* Pricing Cards */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
+        .price-card { background-color: #222; padding: 2.5rem 2rem; border-top: 4px solid var(--f1-red); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .price-card h3 { font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; }
+        .price { font-family: var(--font-display); font-size: 2.5rem; color: var(--f1-red); margin-bottom: 1.5rem; }
+        .price-card ul { list-style: none; margin-bottom: 2rem; }
+        .price-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .price-card ul li::before { content: '✓'; color: var(--f1-red); position: absolute; left: 0; font-weight: bold; }
 
-        .logo span {
-            color: var(--f1-red);
-        }
+        /* Timetable Table */
+        .timetable-wrapper { background-color: #222; padding: 2rem; border-top: 4px solid var(--f1-red); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 1rem; border-bottom: 1px solid #333; font-size: 1.1rem; }
+        th { font-family: var(--font-display); color: var(--f1-red); text-transform: uppercase; font-size: 1.3rem; letter-spacing: 1px; }
+        td { color: #ccc; }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+        footer { background-color: #000; padding: 2rem 5%; text-align: center; border-top: 1px solid #333; color: #888; }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--f1-red);
-        }
-
-        /* Button Style */
-        .btn {
-            background-color: var(--f1-red);
-            color: white;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            transform: skewX(-15deg);
-            display: inline-block;
-            transition: background 0.3s, transform 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn span {
-            display: block;
-            transform: skewX(15deg);
-        }
-
-        .btn:hover {
-            background-color: #ff1e16;
-            transform: skewX(-15deg) scale(1.05);
-        }
-
-        /* Booking Section Specifics */
-        .booking-section {
-            padding: 5rem 5%;
-            min-height: 80vh;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background-color: var(--f1-red);
-            display: inline-block;
-        }
-
-        .booking-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #222;
-            padding: 3rem;
-            border-top: 4px solid var(--f1-red);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            position: relative;
-        }
-
-        .booking-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 5px;
-            background: repeating-linear-gradient(
-                45deg,
-                #fff,
-                #fff 10px,
-                #000 10px,
-                #000 20px
-            );
-        }
-
-        .f1-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-family: var(--font-display);
-            text-transform: uppercase;
-            color: var(--f1-light);
-            letter-spacing: 1.5px;
-            font-size: 1.2rem;
-        }
-
-        .f1-form input,
-        .f1-form select,
-        .f1-form textarea {
-            width: 100%;
-            padding: 1rem;
-            background-color: #111;
-            border: 1px solid #333;
-            color: var(--f1-light);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .f1-form input:focus,
-        .f1-form select:focus,
-        .f1-form textarea:focus {
-            border-color: var(--f1-red);
-            background-color: #1a1a24;
-            box-shadow: -4px 0 0 var(--f1-red);
-        }
-
-        ::-webkit-calendar-picker-indicator {
-            filter: invert(1);
-            cursor: pointer;
-        }
-
-        .f1-form select option {
-            background-color: #222;
-            color: var(--f1-light);
-        }
-
-        .f1-form .btn {
-            align-self: flex-start;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background-color: #000;
-            padding: 2rem 5%;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
-
-        footer p {
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            .booking-container {
-                padding: 2rem 1.5rem;
-            }
-            .nav-links { display: none; }
-        }
+        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo">Apex<span>F4</span></a>
         <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="index.html#track">The Circuit</a>
-            <a href="index.html#fleet">Our Cars</a>
         </div>
         <a href="booking.html" class="btn"><span>Book a Drive</span></a>
     </nav>
 
-    <!-- Booking Content Section -->
-    <section class="booking-section">
-        <h2 class="section-title">Secure Your Seat</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 3rem;">
-            Grid slots fill up fast. Reserve your session below, or reach out for corporate events, team building, and exclusive track hire.
-        </p>
-
-        <div class="booking-container">
-            <!-- Remember to replace action="#" with your Formspree link if you want live emails -->
-            <form action="#" method="POST" class="f1-form" id="booking-form">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Driver Name</label>
-                        <input type="text" id="name" name="name" placeholder="E.g. Lewis Hamilton" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Telemetry (Email)</label>
-                        <input type="email" id="email" name="email" placeholder="driver@example.com" required>
-                    </div>
+    <div class="container">
+        <h2 class="section-title">Session Pricing</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <h3>Q1 Sprint</h3>
+                    <div class="price">$89</div>
+                    <ul>
+                        <li>15 Laps on Full Circuit</li>
+                        <li>Telemetry debrief session</li>
+                        <li>Helmet and race suit hire included</li>
+                    </ul>
                 </div>
+                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Sprint</span></a>
+            </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="date">Race Day</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="package">Race Package</label>
-                        <select id="package" name="package" required>
-                            <option value="">Select your session...</option>
-                            <option value="Q1 Sprint (15 Laps)">Q1 Sprint (15 Laps)</option>
-                            <option value="Grand Prix Experience (30 Laps)">Grand Prix Experience (30 Laps)</option>
-                            <option value="Team Endurance (2 Hours)">Team Endurance (2 Hours)</option>
-                            <option value="Corporate / Group Event">Corporate / Group Event</option>
-                        </select>
-                    </div>
+            <div class="price-card" style="border-top-color: #ffb703; transform: scale(1.03); background-color: #262630;">
+                <div style="background-color: #ffb703; color: #000; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; padding: 2px 8px; display: inline-block; margin-bottom: 1rem;">Most Popular</div>
+                <div>
+                    <h3>Grand Prix</h3>
+                    <div class="price" style="color: #ffb703;">$159</div>
+                    <ul>
+                        <li>30 Laps (Qualifying + Main Race)</li>
+                        <li>Full data analysis dashboard</li>
+                        <li>Podium ceremony & trophy photo</li>
+                    </ul>
                 </div>
+                <a href="booking.html" class="btn" style="background-color: #ffb703; color: #000; text-align: center;"><span>Book GP</span></a>
+            </div>
 
-                <div class="form-group">
-                    <label for="message">Pit Wall Comms (Message)</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Any special requirements, helmet sizes, or group inquiries?"></textarea>
+            <div class="price-card">
+                <div>
+                    <h3>Endurance</h3>
+                    <div class="price">$299</div>
+                    <ul>
+                        <li>2-Hour Team Driver Rotation</li>
+                        <li>Driver change pit stops</li>
+                        <li>Full race engineer support</li>
+                    </ul>
                 </div>
-
-                <button type="submit" class="btn"><span>Send to Race Control</span></button>
-
-            </form>
+                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Endurance</span></a>
+            </div>
         </div>
-    </section>
 
-    <!-- Footer -->
+        <h2 class="section-title" style="margin-top: 4rem;">Track Timetable</h2>
+        <div class="timetable-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day of the Week</th>
+                        <th>Operating Hours</th>
+                        <th>Session Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday – Thursday</td>
+                        <td>10:00 AM – 8:00 PM</td>
+                        <td>Sprints, Grand Prix, Corporate Bookings</td>
+                    </tr>
+                    <tr>
+                        <td>Friday – Saturday</td>
+                        <td>9:00 AM – 10:00 PM</td>
+                        <td>All Sessions + Night Racing under Floodlights</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>9:00 AM – 7:00 PM</td>
+                        <td>Sprint & GP Sessions Only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <footer>
         <div class="logo" style="margin-bottom: 1rem;">Apex<span>F4</span></div>
         <p>Sunshine Coast, QLD | Open 7 Days a Week</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing. Built for speed.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing.</p>
     </footer>
 
-    <!-- Form Animation Script -->
-    <script>
-        const bookingForm = document.getElementById('booking-form');
-        const submitBtn = bookingForm.querySelector('button[type="submit"]');
-        const btnSpan = submitBtn.querySelector('span');
-
-        bookingForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            // Yellow Flag State
-            submitBtn.style.backgroundColor = '#eab308'; 
-            submitBtn.style.color = '#000';
-            btnSpan.textContent = "Transmitting to Pit Wall...";
-            submitBtn.disabled = true;
-
-            const formData = new FormData(bookingForm);
-
-            try {
-                // If you use Formspree, replace action="#" with your endpoint. 
-                // For testing locally without Formspree, this mimics a successful network check:
-                await new Promise(resolve => setTimeout(resolve, 1500)); 
-
-                // Green Flag State
-                submitBtn.style.backgroundColor = '#16a34a'; 
-                submitBtn.style.color = '#fff';
-                btnSpan.textContent = "GREEN LIGHT! Booking Secured.";
-                bookingForm.reset(); 
-            } catch (error) {
-                // Black Flag State
-                submitBtn.style.backgroundColor = '#000'; 
-                submitBtn.style.color = '#fff';
-                btnSpan.textContent = "BLACK FLAG! Pit Wall Unreachable.";
-            }
-
-            setTimeout(() => {
-                submitBtn.style.backgroundColor = ''; 
-                submitBtn.style.color = '';
-                submitBtn.disabled = false;
-                btnSpan.textContent = "Send to Race Control";
-            }, 4000);
-        });
-    </script>
 </body>
 </html>
-// --- Live Form Submission Handling with Formspree ---
-const bookingForm = document.getElementById('booking-form');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Times | Apex F4 Racing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --f1-red: #e10600;
+            --f1-dark: #15151e;
+            --f1-light: #f4f4f4;
+            --font-display: 'Racing Sans One', sans-serif;
+            --font-body: 'Titillium Web', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--f1-dark); color: var(--f1-light); line-height: 1.6; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #000; border-bottom: 3px solid var(--f1-red); position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: var(--font-display); font-size: 2rem; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
+        .logo span { color: var(--f1-red); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--f1-red); }
+
+        .btn { background-color: var(--f1-red); color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; transform: skewX(-15deg); display: inline-block; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
+        .btn span { display: block; transform: skewX(15deg); }
+        .btn:hover { background-color: #ff1e16; transform: skewX(-15deg) scale(1.05); }
+
+        .container { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+        .section-title::before { content: ''; width: 50px; height: 5px; background-color: var(--f1-red); display: inline-block; }
+
+        /* Pricing Cards */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
+        .price-card { background-color: #222; padding: 2.5rem 2rem; border-top: 4px solid var(--f1-red); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .price-card h3 { font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; }
+        .price { font-family: var(--font-display); font-size: 2.5rem; color: var(--f1-red); margin-bottom: 1.5rem; }
+        .price-card ul { list-style: none; margin-bottom: 2rem; }
+        .price-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .price-card ul li::before { content: '✓'; color: var(--f1-red); position: absolute; left: 0; font-weight: bold; }
+
+        /* Timetable Table */
+        .timetable-wrapper { background-color: #222; padding: 2rem; border-top: 4px solid var(--f1-red); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 1rem; border-bottom: 1px solid #333; font-size: 1.1rem; }
+        th { font-family: var(--font-display); color: var(--f1-red); text-transform: uppercase; font-size: 1.3rem; letter-spacing: 1px; }
+        td { color: #ccc; }
+
+        footer { background-color: #000; padding: 2rem 5%; text-align: center; border-top: 1px solid #333; color: #888; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Apex<span>F4</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#track">The Circuit</a>
+        </div>
+        <a href="booking.html" class="btn"><span>Book a Drive</span></a>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title">Session Pricing</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <h3>Q1 Sprint</h3>
+                    <div class="price">$89</div>
+                    <ul>
+                        <li>15 Laps on Full Circuit</li>
+                        <li>Telemetry debrief session</li>
+                        <li>Helmet and race suit hire included</li>
+                    </ul>
+                </div>
+                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Sprint</span></a>
+            </div>
+
+            <div class="price-card" style="border-top-color: #ffb703; transform: scale(1.03); background-color: #262630;">
+                <div style="background-color: #ffb703; color: #000; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; padding: 2px 8px; display: inline-block; margin-bottom: 1rem;">Most Popular</div>
+                <div>
+                    <h3>Grand Prix</h3>
+                    <div class="price" style="color: #ffb703;">$159</div>
+                    <ul>
+                        <li>30 Laps (Qualifying + Main Race)</li>
+                        <li>Full data analysis dashboard</li>
+                        <li>Podium ceremony & trophy photo</li>
+                    </ul>
+                </div>
+                <a href="booking.html" class="btn" style="background-color: #ffb703; color: #000; text-align: center;"><span>Book GP</span></a>
+            </div>
+
+            <div class="price-card">
+                <div>
+                    <h3>Endurance</h3>
+                    <div class="price">$299</div>
+                    <ul>
+                        <li>2-Hour Team Driver Rotation</li>
+                        <li>Driver change pit stops</li>
+                        <li>Full race engineer support</li>
+                    </ul>
+                </div>
+                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Endurance</span></a>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 4rem;">Track Timetable</h2>
+        <div class="timetable-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day of the Week</th>
+                        <th>Operating Hours</th>
+                        <th>Session Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday – Thursday</td>
+                        <td>10:00 AM – 8:00 PM</td>
+                        <td>Sprints, Grand Prix, Corporate Bookings</td>
+                    </tr>
+                    <tr>
+                        <td>Friday – Saturday</td>
+                        <td>9:00 AM – 10:00 PM</td>
+                        <td>All Sessions + Night Racing under Floodlights</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>9:00 AM – 7:00 PM</td>
+                        <td>Sprint & GP Sessions Only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 1rem;">Apex<span>F4</span></div>
+        <p>Sunshine Coast, QLD | Open 7 Days a Week</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing.</p>
+    </footer>
+</body>
+</html>
+/* --- Booking & Contact Form Styles --- */
+.booking-section {
+    background-color: var(--f1-dark);
+}
+
+.booking-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #222;
+    padding: 3rem;
+    border-top: 4px solid var(--f1-red);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* Optional: Adds a subtle racing stripe to the side of the form */
+.booking-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 10px,
+        #000 10px,
+        #000 20px
+    );
+}
+
+.f1-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    color: var(--f1-light);
+    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+}
+
+.f1-form input,
+.f1-form select,
+.f1-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: #111;
+    border: 1px solid #333;
+    color: var(--f1-light);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.f1-form input:focus,
+.f1-form select:focus,
+.f1-form textarea:focus {
+    border-color: var(--f1-red);
+    background-color: #1a1a24;
+    box-shadow: -4px 0 0 var(--f1-red); /* Creates an F1-style side highlight */
+}
+
+/* Makes the calendar icon white in dark mode */
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.f1-form select option {
+    background-color: #222;
+    color: var(--f1-light);
+}
+
+.f1-form .btn {
+    align-self: flex-start;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Form Mobile Responsiveness */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .booking-container {
+        padding: 2rem 1.5rem;
+    }
+}
+// --- Form Submission Handling ---
+const bookingForm = document.querySelector('.f1-form');
 const submitBtn = bookingForm.querySelector('button[type="submit"]');
 const btnSpan = submitBtn.querySelector('span');
 
-bookingForm.addEventListener('submit', async function(e) {
-    // 1. Stop the page from reloading
+bookingForm.addEventListener('submit', function(e) {
+    // Stop the page from reloading
     e.preventDefault();
 
-    // 2. Yellow Flag: Change button to a "loading" state
-    submitBtn.style.backgroundColor = '#eab308'; 
+    // 1. Change button to a "loading" state
+    submitBtn.style.backgroundColor = '#eab308'; // Yellow flag color
     submitBtn.style.color = '#000';
     btnSpan.textContent = "Transmitting to Pit Wall...";
     submitBtn.disabled = true;
 
-    // 3. Gather the form data
-    const formData = new FormData(bookingForm);
-
-    try {
-        // 4. Send the data to Formspree
-        const response = await fetch(bookingForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            // 5. Green Flag: Success!
-            submitBtn.style.backgroundColor = '#16a34a'; 
-            submitBtn.style.color = '#fff';
-            btnSpan.textContent = "GREEN LIGHT! Booking Secured.";
-            bookingForm.reset(); // Clear the form
-        } else {
-            // Black Flag: Server error
-            submitBtn.style.backgroundColor = '#000'; 
-            submitBtn.style.color = '#fff';
-            btnSpan.textContent = "BLACK FLAG! Transmission Failed.";
-        }
-    } catch (error) {
-        // Black Flag: Network error
-        submitBtn.style.backgroundColor = '#000'; 
-        submitBtn.style.color = '#fff';
-        btnSpan.textContent = "BLACK FLAG! Pit Wall Unreachable.";
-    }
-
-    // 6. Reset button back to normal (Red) after 4 seconds
+    // 2. Simulate sending the data (2-second delay)
     setTimeout(() => {
-        submitBtn.style.backgroundColor = ''; 
-        submitBtn.style.color = '';
-        submitBtn.disabled = false;
-        btnSpan.textContent = "Send to Race Control";
-    }, 4000);
+        // 3. Show success state (Green Light)
+        submitBtn.style.backgroundColor = '#16a34a'; // Green flag color
+        submitBtn.style.color = '#fff';
+        btnSpan.textContent = "GREEN LIGHT! Booking Secured.";
+        
+        // 4. Reset the form fields
+        bookingForm.reset();
+
+        // 5. Reset button back to normal after 4 seconds
+        setTimeout(() => {
+            submitBtn.style.backgroundColor = ''; // Reverts to CSS default (Red)
+            submitBtn.disabled = false;
+            btnSpan.textContent = "Send to Race Control";
+        }, 4000);
+
+    }, 2000);
 });
