@@ -3,541 +3,1223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex F4 Racing | Sunshine Coast</title>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --f1-red: #e10600;
-            --f1-dark: #15151e;
-            --f1-light: #f4f4f4;
-            --font-display: 'Racing Sans One', sans-serif;
-            --font-body: 'Titillium Web', sans-serif;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--f1-dark); color: var(--f1-light); line-height: 1.6; }
-        
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #000; border-bottom: 3px solid var(--f1-red); position: sticky; top: 0; z-index: 100; }
-        .logo { font-family: var(--font-display); font-size: 2rem; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        .logo span { color: var(--f1-red); }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--f1-red); }
 
-        .btn { background-color: var(--f1-red); color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; transform: skewX(-15deg); display: inline-block; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
-        .btn span { display: block; transform: skewX(15deg); }
-        .btn:hover { background-color: #ff1e16; transform: skewX(-15deg) scale(1.05); }
+    <title>APEX F4 | Sunshine Coast</title>
 
-        .hero { height: 90vh; background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRJc9kLEl1LWvU90_AohQJFwzbKFFUXTgsLQ9gAwpgmThQu0v2pn-L88u82AFxlwJ9IunEQEQy9xNFEjp4') center/cover; display: flex; align-items: center; padding: 0 5%; }
-        .hero-content { max-width: 800px; }
-        .hero h1 { font-family: var(--font-display); font-size: 5rem; line-height: 1; margin-bottom: 1rem; text-transform: uppercase; }
-        .hero p { font-size: 1.5rem; margin-bottom: 2rem; font-style: italic; border-left: 5px solid var(--f1-red); padding-left: 1rem; }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        section { padding: 5rem 5%; }
-        .section-title { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
-        .section-title::before { content: ''; width: 50px; height: 5px; background-color: var(--f1-red); display: inline-block; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background-color: #222; padding: 2rem; border-top: 4px solid var(--f1-red); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card h3 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem; color: var(--f1-red); }
-        .card ul { list-style: none; }
-        .card ul li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
-        .card ul li::before { content: '►'; color: var(--f1-red); position: absolute; left: 0; font-size: 0.8rem; top: 4px; }
-
-        .banner { background-color: var(--f1-red); text-align: center; padding: 3rem 5%; color: white; font-family: var(--font-display); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
-        footer { background-color: #000; padding: 2rem 5%; text-align: center; border-top: 1px solid #333; color: #888; }
-
-        @media (max-width: 768px) { .hero h1 { font-size: 3.5rem; } .nav-links { display: none; } }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav>
-        <a href="index.html" class="logo">Apex<span>F4</span></a>
-        <div class="nav-links">
-            <a href="pricing.html">Pricing & Times</a>
-            <a href="index.html#track">The Circuit</a>
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        <span class="logo-mark">A</span>
+
+        <div>
+            APEX
+            <small>F4 SUNSHINE COAST</small>
         </div>
-        <a href="booking.html" class="btn"><span>Book a Drive</span></a>
+    </a>
+
+    <nav>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#circuit">CIRCUIT</a>
+        <a href="#cars">CARS</a>
+        <a href="#pricing">PRICING</a>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Experience True Downforce</h1>
-            <p>The Sunshine Coast's premier 1.2km outdoor circuit. Step out of a go-kart and into a real Formula 4 open-wheel race car.</p>
-            <a href="booking.html" class="btn" style="font-size: 1.2rem;"><span>Secure Your Seat</span></a>
+    <button class="nav-book" data-payment>
+        BOOK NOW →
+    </button>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            SUNSHINE COAST / QUEENSLAND
         </div>
-    </header>
 
-    <section id="fleet">
-        <h2 class="section-title">The Machinery</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Aero Package</h3>
-                <p>Equipped with front and rear wings just like Formula 1. The faster you drive, the harder the car sticks to the track.</p>
-            </div>
-            <div class="card">
-                <h3>Powertrain</h3>
-                <ul>
-                    <li>1.4L Turbocharged Engine</li>
-                    <li>160 Brake Horsepower</li>
-                    <li>Paddle-shift Sequential Gearbox</li>
-                    <li>0-100 km/h in 3.6 seconds</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Cockpit</h3>
-                <p>Carbon-fiber monocoque chassis, quick-release steering wheels, digital dash displays, and 6-point racing harnesses.</p>
-            </div>
-        </div>
-    </section>
+        <h1>
+            RACE
+            <br>
+            <em>LIKE A</em>
+            <br>
+            PRO.
+        </h1>
 
-    <div class="banner">Stop Playing Games. Start Racing.</div>
-
-    <section id="track" style="background-color: #0a0a0f;">
-        <h2 class="section-title">The Circuit</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem;">
-            Inspired by the Big Kart Track layout, scaled up and widened for true open-wheel racing. 1.2 kilometers of sweeping bends, aggressive hairpins, and a massive 400m straight.
+        <p>
+            F4-style open-wheel racing built for drivers
+            who want more than ordinary karting.
         </p>
-    </section>
 
-    <footer>
-        <div class="logo" style="margin-bottom: 1rem;">Apex<span>F4</span></div>
-        <p>Sunshine Coast, QLD | Open 7 Days a Week</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing.</p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Times | Apex F4 Racing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --f1-red: #e10600;
-            --f1-dark: #15151e;
-            --f1-light: #f4f4f4;
-            --font-display: 'Racing Sans One', sans-serif;
-            --font-body: 'Titillium Web', sans-serif;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--f1-dark); color: var(--f1-light); line-height: 1.6; }
+        <button class="red-btn" data-payment>
+            CHOOSE YOUR RACE
+            <b>↓</b>
+        </button>
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #000; border-bottom: 3px solid var(--f1-red); position: sticky; top: 0; z-index: 100; }
-        .logo { font-family: var(--font-display); font-size: 2rem; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        .logo span { color: var(--f1-red); }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--f1-red); }
-
-        .btn { background-color: var(--f1-red); color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; transform: skewX(-15deg); display: inline-block; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
-        .btn span { display: block; transform: skewX(15deg); }
-        .btn:hover { background-color: #ff1e16; transform: skewX(-15deg) scale(1.05); }
-
-        .container { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
-        .section-title::before { content: ''; width: 50px; height: 5px; background-color: var(--f1-red); display: inline-block; }
-
-        /* Pricing Cards */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
-        .price-card { background-color: #222; padding: 2.5rem 2rem; border-top: 4px solid var(--f1-red); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-        .price-card h3 { font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; }
-        .price { font-family: var(--font-display); font-size: 2.5rem; color: var(--f1-red); margin-bottom: 1.5rem; }
-        .price-card ul { list-style: none; margin-bottom: 2rem; }
-        .price-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
-        .price-card ul li::before { content: '✓'; color: var(--f1-red); position: absolute; left: 0; font-weight: bold; }
-
-        /* Timetable Table */
-        .timetable-wrapper { background-color: #222; padding: 2rem; border-top: 4px solid var(--f1-red); overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 1rem; border-bottom: 1px solid #333; font-size: 1.1rem; }
-        th { font-family: var(--font-display); color: var(--f1-red); text-transform: uppercase; font-size: 1.3rem; letter-spacing: 1px; }
-        td { color: #ccc; }
-
-        footer { background-color: #000; padding: 2rem 5%; text-align: center; border-top: 1px solid #333; color: #888; }
-
-        @media (max-width: 768px) { .nav-links { display: none; } }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="index.html" class="logo">Apex<span>F4</span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#track">The Circuit</a>
-        </div>
-        <a href="booking.html" class="btn"><span>Book a Drive</span></a>
-    </nav>
-
-    <div class="container">
-        <h2 class="section-title">Session Pricing</h2>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div>
-                    <h3>Q1 Sprint</h3>
-                    <div class="price">$89</div>
-                    <ul>
-                        <li>15 Laps on Full Circuit</li>
-                        <li>Telemetry debrief session</li>
-                        <li>Helmet and race suit hire included</li>
-                    </ul>
-                </div>
-                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Sprint</span></a>
-            </div>
-
-            <div class="price-card" style="border-top-color: #ffb703; transform: scale(1.03); background-color: #262630;">
-                <div style="background-color: #ffb703; color: #000; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; padding: 2px 8px; display: inline-block; margin-bottom: 1rem;">Most Popular</div>
-                <div>
-                    <h3>Grand Prix</h3>
-                    <div class="price" style="color: #ffb703;">$159</div>
-                    <ul>
-                        <li>30 Laps (Qualifying + Main Race)</li>
-                        <li>Full data analysis dashboard</li>
-                        <li>Podium ceremony & trophy photo</li>
-                    </ul>
-                </div>
-                <a href="booking.html" class="btn" style="background-color: #ffb703; color: #000; text-align: center;"><span>Book GP</span></a>
-            </div>
-
-            <div class="price-card">
-                <div>
-                    <h3>Endurance</h3>
-                    <div class="price">$299</div>
-                    <ul>
-                        <li>2-Hour Team Driver Rotation</li>
-                        <li>Driver change pit stops</li>
-                        <li>Full race engineer support</li>
-                    </ul>
-                </div>
-                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Endurance</span></a>
-            </div>
-        </div>
-
-        <h2 class="section-title" style="margin-top: 4rem;">Track Timetable</h2>
-        <div class="timetable-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Day of the Week</th>
-                        <th>Operating Hours</th>
-                        <th>Session Availability</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Monday – Thursday</td>
-                        <td>10:00 AM – 8:00 PM</td>
-                        <td>Sprints, Grand Prix, Corporate Bookings</td>
-                    </tr>
-                    <tr>
-                        <td>Friday – Saturday</td>
-                        <td>9:00 AM – 10:00 PM</td>
-                        <td>All Sessions + Night Racing under Floodlights</td>
-                    </tr>
-                    <tr>
-                        <td>Sunday</td>
-                        <td>9:00 AM – 7:00 PM</td>
-                        <td>Sprint & GP Sessions Only</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
-    <footer>
-        <div class="logo" style="margin-bottom: 1rem;">Apex<span>F4</span></div>
-        <p>Sunshine Coast, QLD | Open 7 Days a Week</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing.</p>
-    </footer>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Times | Apex F4 Racing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --f1-red: #e10600;
-            --f1-dark: #15151e;
-            --f1-light: #f4f4f4;
-            --font-display: 'Racing Sans One', sans-serif;
-            --font-body: 'Titillium Web', sans-serif;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); background-color: var(--f1-dark); color: var(--f1-light); line-height: 1.6; }
+    <div class="hero-car">
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #000; border-bottom: 3px solid var(--f1-red); position: sticky; top: 0; z-index: 100; }
-        .logo { font-family: var(--font-display); font-size: 2rem; color: white; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        .logo span { color: var(--f1-red); }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--f1-red); }
+        <div class="car-glow"></div>
 
-        .btn { background-color: var(--f1-red); color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 700; text-transform: uppercase; transform: skewX(-15deg); display: inline-block; transition: background 0.3s, transform 0.3s; border: none; cursor: pointer; }
-        .btn span { display: block; transform: skewX(15deg); }
-        .btn:hover { background-color: #ff1e16; transform: skewX(-15deg) scale(1.05); }
-
-        .container { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: var(--font-display); font-size: 3rem; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
-        .section-title::before { content: ''; width: 50px; height: 5px; background-color: var(--f1-red); display: inline-block; }
-
-        /* Pricing Cards */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
-        .price-card { background-color: #222; padding: 2.5rem 2rem; border-top: 4px solid var(--f1-red); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-        .price-card h3 { font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; }
-        .price { font-family: var(--font-display); font-size: 2.5rem; color: var(--f1-red); margin-bottom: 1.5rem; }
-        .price-card ul { list-style: none; margin-bottom: 2rem; }
-        .price-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
-        .price-card ul li::before { content: '✓'; color: var(--f1-red); position: absolute; left: 0; font-weight: bold; }
-
-        /* Timetable Table */
-        .timetable-wrapper { background-color: #222; padding: 2rem; border-top: 4px solid var(--f1-red); overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 1rem; border-bottom: 1px solid #333; font-size: 1.1rem; }
-        th { font-family: var(--font-display); color: var(--f1-red); text-transform: uppercase; font-size: 1.3rem; letter-spacing: 1px; }
-        td { color: #ccc; }
-
-        footer { background-color: #000; padding: 2rem 5%; text-align: center; border-top: 1px solid #333; color: #888; }
-
-        @media (max-width: 768px) { .nav-links { display: none; } }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="index.html" class="logo">Apex<span>F4</span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#track">The Circuit</a>
-        </div>
-        <a href="booking.html" class="btn"><span>Book a Drive</span></a>
-    </nav>
-
-    <div class="container">
-        <h2 class="section-title">Session Pricing</h2>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div>
-                    <h3>Q1 Sprint</h3>
-                    <div class="price">$89</div>
-                    <ul>
-                        <li>15 Laps on Full Circuit</li>
-                        <li>Telemetry debrief session</li>
-                        <li>Helmet and race suit hire included</li>
-                    </ul>
-                </div>
-                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Sprint</span></a>
-            </div>
-
-            <div class="price-card" style="border-top-color: #ffb703; transform: scale(1.03); background-color: #262630;">
-                <div style="background-color: #ffb703; color: #000; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; padding: 2px 8px; display: inline-block; margin-bottom: 1rem;">Most Popular</div>
-                <div>
-                    <h3>Grand Prix</h3>
-                    <div class="price" style="color: #ffb703;">$159</div>
-                    <ul>
-                        <li>30 Laps (Qualifying + Main Race)</li>
-                        <li>Full data analysis dashboard</li>
-                        <li>Podium ceremony & trophy photo</li>
-                    </ul>
-                </div>
-                <a href="booking.html" class="btn" style="background-color: #ffb703; color: #000; text-align: center;"><span>Book GP</span></a>
-            </div>
-
-            <div class="price-card">
-                <div>
-                    <h3>Endurance</h3>
-                    <div class="price">$299</div>
-                    <ul>
-                        <li>2-Hour Team Driver Rotation</li>
-                        <li>Driver change pit stops</li>
-                        <li>Full race engineer support</li>
-                    </ul>
-                </div>
-                <a href="booking.html" class="btn" style="text-align: center;"><span>Book Endurance</span></a>
-            </div>
+        <div class="f4-car">
+            <span>F4</span>
         </div>
 
-        <h2 class="section-title" style="margin-top: 4rem;">Track Timetable</h2>
-        <div class="timetable-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Day of the Week</th>
-                        <th>Operating Hours</th>
-                        <th>Session Availability</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Monday – Thursday</td>
-                        <td>10:00 AM – 8:00 PM</td>
-                        <td>Sprints, Grand Prix, Corporate Bookings</td>
-                    </tr>
-                    <tr>
-                        <td>Friday – Saturday</td>
-                        <td>9:00 AM – 10:00 PM</td>
-                        <td>All Sessions + Night Racing under Floodlights</td>
-                    </tr>
-                    <tr>
-                        <td>Sunday</td>
-                        <td>9:00 AM – 7:00 PM</td>
-                        <td>Sprint & GP Sessions Only</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
-    <footer>
-        <div class="logo" style="margin-bottom: 1rem;">Apex<span>F4</span></div>
-        <p>Sunshine Coast, QLD | Open 7 Days a Week</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2026 Apex F4 Racing.</p>
-    </footer>
+
+    <div class="hero-stats">
+
+        <div>
+            <strong>160+</strong>
+            <small>KM/H</small>
+        </div>
+
+        <div>
+            <strong>01.20</strong>
+            <small>KM CIRCUIT</small>
+        </div>
+
+        <div>
+            <strong>12</strong>
+            <small>CORNERS</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="red-strip">
+    OPEN WHEEL × FULL ATTACK × SUNSHINE COAST × OPEN WHEEL × FULL ATTACK
+</div>
+
+
+<!-- EXPERIENCE -->
+
+<section class="section" id="experience">
+
+    <div class="eyebrow">
+        01 / EXPERIENCE
+    </div>
+
+    <div class="intro">
+
+        <h2>
+            THIS IS
+            <br>
+            <em>RACING.</em>
+        </h2>
+
+        <p>
+            Strap into an F4-style single seater,
+            learn the circuit, set your qualifying lap
+            and fight for position.
+
+            Everything is designed around speed,
+            competition and the feeling of driving
+            a real race car.
+        </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+        <article>
+
+            <strong>01</strong>
+
+            <h3>BRIEFING</h3>
+
+            <p>
+                Driver briefing, safety instructions
+                and race format.
+            </p>
+
+        </article>
+
+
+        <article class="active">
+
+            <strong>02</strong>
+
+            <h3>QUALIFY</h3>
+
+            <p>
+                Hit the circuit and chase your
+                fastest possible lap.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <strong>03</strong>
+
+            <h3>RACE</h3>
+
+            <p>
+                Grid up, lights out and battle
+                for every position.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CIRCUIT -->
+
+<section class="dark-section section" id="circuit">
+
+    <div class="eyebrow">
+        02 / CIRCUIT
+    </div>
+
+    <div class="intro">
+
+        <h2>
+            FIND YOUR
+            <br>
+            <em>LINE.</em>
+        </h2>
+
+        <p>
+            A technical Sunshine Coast-style circuit
+            with fast sections, heavy braking zones
+            and corners where a perfect line makes
+            the difference.
+        </p>
+
+    </div>
+
+
+    <div class="track">
+
+        <div class="track-title">
+            APEX CIRCUIT / 1.20 KM
+        </div>
+
+        <svg viewBox="0 0 900 480">
+
+            <path
+                class="track-shadow"
+                d="M120 350
+                C55 255 120 125 250 130
+                C340 133 360 70 475 85
+                C600 100 730 120 755 215
+                C780 305 690 365 590 330
+                C510 302 500 395 385 415
+                C270 435 160 420 120 350Z"
+            />
+
+            <path
+                class="track-line"
+                d="M120 350
+                C55 255 120 125 250 130
+                C340 133 360 70 475 85
+                C600 100 730 120 755 215
+                C780 305 690 365 590 330
+                C510 302 500 395 385 415
+                C270 435 160 420 120 350Z"
+            />
+
+        </svg>
+
+        <div class="start-finish">
+            START / FINISH
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CAR -->
+
+<section class="section" id="cars">
+
+    <div class="eyebrow">
+        03 / THE CAR
+    </div>
+
+
+    <div class="car-layout">
+
+        <div class="car-display">
+
+            <div class="car-glow"></div>
+
+            <div class="f4-car big">
+                <span>F4</span>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="eyebrow">
+                APEX F4-01
+            </div>
+
+            <h2>
+                BUILT TO
+                <br>
+                <em>ATTACK.</em>
+            </h2>
+
+            <p class="copy">
+                Lightweight, low to the ground and
+                completely focused on the driver.
+
+                Direct steering and rear-wheel drive
+                make every corner count.
+            </p>
+
+
+            <div class="specs">
+
+                <div>
+                    <strong>160+</strong>
+                    <span>KM/H</span>
+                </div>
+
+                <div>
+                    <strong>4.0s</strong>
+                    <span>0–100 KM/H</span>
+                </div>
+
+                <div>
+                    <strong>600</strong>
+                    <span>CC</span>
+                </div>
+
+                <div>
+                    <strong>160</strong>
+                    <span>KG</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section class="dark-section section" id="pricing">
+
+    <div class="eyebrow">
+        04 / CHOOSE YOUR RACE
+    </div>
+
+    <div class="intro">
+
+        <h2>
+            GET ON
+            <br>
+            <em>THE GRID.</em>
+        </h2>
+
+        <p>
+            Choose your race package.
+            Once you select one, the website
+            automatically takes you straight
+            to payment.
+        </p>
+
+    </div>
+
+
+    <div class="packages">
+
+
+        <!-- ROOKIE -->
+
+        <article class="package">
+
+            <span class="package-tag">
+                INTRO
+            </span>
+
+            <h3>
+                ROOKIE
+            </h3>
+
+            <div class="price">
+                $59
+                <small>AUD</small>
+            </div>
+
+            <ul>
+                <li>Driver briefing</li>
+                <li>Practice session</li>
+                <li>Timed laps</li>
+                <li>Race results</li>
+            </ul>
+
+            <button
+                class="choose"
+                data-package="Rookie Race"
+                data-price="59"
+            >
+                SELECT →
+            </button>
+
+        </article>
+
+
+        <!-- GRAND PRIX -->
+
+        <article class="package featured">
+
+            <span class="package-tag">
+                MOST POPULAR
+            </span>
+
+            <h3>
+                GRAND PRIX
+            </h3>
+
+            <div class="price">
+                $119
+                <small>AUD</small>
+            </div>
+
+            <ul>
+                <li>Driver briefing</li>
+                <li>Practice session</li>
+                <li>Qualifying</li>
+                <li>Race</li>
+                <li>Full timing</li>
+            </ul>
+
+            <button
+                class="choose"
+                data-package="Grand Prix"
+                data-price="119"
+            >
+                SELECT →
+            </button>
+
+        </article>
+
+
+        <!-- CHAMPIONSHIP -->
+
+        <article class="package">
+
+            <span class="package-tag">
+                FULL DAY
+            </span>
+
+            <h3>
+                CHAMPIONSHIP
+            </h3>
+
+            <div class="price">
+                $189
+                <small>AUD</small>
+            </div>
+
+            <ul>
+                <li>Multiple sessions</li>
+                <li>Qualifying</li>
+                <li>Race heats</li>
+                <li>Final</li>
+                <li>Full results</li>
+            </ul>
+
+            <button
+                class="choose"
+                data-package="Championship"
+                data-price="189"
+            >
+                SELECT →
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- PAYMENT -->
+
+<section class="payment" id="payment">
+
+    <div class="payment-container">
+
+        <div class="payment-heading">
+
+            <div class="eyebrow">
+                05 / PAYMENT
+            </div>
+
+            <h2>
+                SECURE
+                <br>
+                <em>YOUR GRID.</em>
+            </h2>
+
+            <p>
+                Enter your details below to continue
+                with your selected race.
+            </p>
+
+        </div>
+
+
+        <div class="payment-grid">
+
+
+            <!-- FORM -->
+
+            <form id="paymentForm">
+
+                <label>
+                    DRIVER NAME
+
+                    <input
+                        type="text"
+                        id="driverName"
+                        placeholder="Your full name"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    EMAIL
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    RACE DATE
+
+                    <input
+                        type="date"
+                        id="raceDate"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    NUMBER OF DRIVERS
+
+                    <select id="drivers" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            1 Driver
+                        </option>
+
+                        <option>
+                            2 Drivers
+                        </option>
+
+                        <option>
+                            3 Drivers
+                        </option>
+
+                        <option>
+                            4 Drivers
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label class="terms-check">
+
+                    <input
+                        type="checkbox"
+                        id="agree"
+                        required
+                    >
+
+                    <span>
+                        I agree to the Terms & Conditions.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="pay-btn"
+                >
+                    CONTINUE TO PAYMENT
+                    <b>→</b>
+                </button>
+
+            </form>
+
+
+            <!-- ORDER -->
+
+            <aside class="order">
+
+                <span class="order-label">
+                    YOUR RACE
+                </span>
+
+                <h3 id="selectedPackage">
+                    GRAND PRIX
+                </h3>
+
+
+                <div class="order-row">
+
+                    <span>
+                        Package
+                    </span>
+
+                    <strong id="packageName">
+                        Grand Prix
+                    </strong>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>
+                        Race price
+                    </span>
+
+                    <strong>
+                        $<span id="packagePrice">119</span> AUD
+                    </strong>
+
+                </div>
+
+
+                <div class="total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong>
+                        $<span id="totalPrice">119</span> AUD
+                    </strong>
+
+                </div>
+
+
+                <div class="secure">
+
+                    🔒 SECURE CHECKOUT
+
+                    <small>
+                        Payment provider can be connected
+                        here using Stripe or PayPal.
+                    </small>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TERMS -->
+
+<section class="terms" id="terms">
+
+    <div class="eyebrow">
+        06 / TERMS & CONDITIONS
+    </div>
+
+    <h2>
+        BEFORE YOU
+        <br>
+        <em>RACE.</em>
+    </h2>
+
+
+    <div class="terms-grid">
+
+        <div>
+            <strong>
+                1. DRIVER REQUIREMENTS
+            </strong>
+
+            <p>
+                Drivers must meet the venue's minimum
+                age, height and safety requirements.
+            </p>
+        </div>
+
+
+        <div>
+            <strong>
+                2. SAFETY
+            </strong>
+
+            <p>
+                All drivers must follow staff instructions
+                and wear all required safety equipment.
+            </p>
+        </div>
+
+
+        <div>
+            <strong>
+                3. BOOKINGS
+            </strong>
+
+            <p>
+                Bookings are subject to availability.
+                Drivers must arrive before their allocated
+                session.
+            </p>
+        </div>
+
+
+        <div>
+            <strong>
+                4. WEATHER
+            </strong>
+
+            <p>
+                Sessions may be delayed or changed due
+                to weather or track conditions.
+            </p>
+        </div>
+
+
+        <div>
+            <strong>
+                5. PAYMENT
+            </strong>
+
+            <p>
+                Prices are shown in Australian dollars.
+                Payment processing is handled by the
+                selected payment provider.
+            </p>
+        </div>
+
+
+        <div>
+            <strong>
+                6. LIABILITY
+            </strong>
+
+            <p>
+                Participation is subject to the venue's
+                waiver, safety rules and applicable laws.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <a href="#home" class="logo">
+        <span class="logo-mark">A</span>
+
+        <div>
+            APEX
+            <small>F4 SUNSHINE COAST</small>
+        </div>
+    </a>
+
+    <p>
+        OPEN-WHEEL RACING / SUNSHINE COAST
+    </p>
+
+    <small>
+        © 2026 APEX F4
+    </small>
+
+</footer>
+
+
+<div class="toast" id="toast">
+    RACE SELECTED — TAKING YOU TO PAYMENT
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
-/* --- Booking & Contact Form Styles --- */
-.booking-section {
-    background-color: var(--f1-dark);
-}
+/* =========================
+   APEX F4 BOOKING SYSTEM
+========================= */
 
-.booking-container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #222;
-    padding: 3rem;
-    border-top: 4px solid var(--f1-red);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    position: relative;
-}
+const paymentSection =
+    document.getElementById("payment");
 
-/* Optional: Adds a subtle racing stripe to the side of the form */
-.booking-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 5px;
-    background: repeating-linear-gradient(
-        45deg,
-        #fff,
-        #fff 10px,
-        #000 10px,
-        #000 20px
-    );
-}
+const toast =
+    document.getElementById("toast");
 
-.f1-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+const selectedPackage =
+    document.getElementById("selectedPackage");
 
-.form-row {
-    display: flex;
-    gap: 2rem;
-}
+const packageName =
+    document.getElementById("packageName");
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 0.5rem;
-}
+const packagePrice =
+    document.getElementById("packagePrice");
 
-.form-group label {
-    font-family: var(--font-display);
-    text-transform: uppercase;
-    color: var(--f1-light);
-    letter-spacing: 1.5px;
-    font-size: 1.2rem;
-}
+const totalPrice =
+    document.getElementById("totalPrice");
 
-.f1-form input,
-.f1-form select,
-.f1-form textarea {
-    width: 100%;
-    padding: 1rem;
-    background-color: #111;
-    border: 1px solid #333;
-    color: var(--f1-light);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
 
-.f1-form input:focus,
-.f1-form select:focus,
-.f1-form textarea:focus {
-    border-color: var(--f1-red);
-    background-color: #1a1a24;
-    box-shadow: -4px 0 0 var(--f1-red); /* Creates an F1-style side highlight */
-}
+/* =========================
+   GO TO PAYMENT
+========================= */
 
-/* Makes the calendar icon white in dark mode */
-::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    cursor: pointer;
-}
+function goToPayment(
+    raceName = "Grand Prix",
+    racePrice = "119"
+) {
 
-.f1-form select option {
-    background-color: #222;
-    color: var(--f1-light);
-}
+    selectedPackage.textContent =
+        raceName.toUpperCase();
 
-.f1-form .btn {
-    align-self: flex-start;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-}
+    packageName.textContent =
+        raceName;
 
-/* Form Mobile Responsiveness */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .booking-container {
-        padding: 2rem 1.5rem;
-    }
-}
-// --- Form Submission Handling ---
-const bookingForm = document.querySelector('.f1-form');
-const submitBtn = bookingForm.querySelector('button[type="submit"]');
-const btnSpan = submitBtn.querySelector('span');
+    packagePrice.textContent =
+        racePrice;
 
-bookingForm.addEventListener('submit', function(e) {
-    // Stop the page from reloading
-    e.preventDefault();
+    totalPrice.textContent =
+        racePrice;
 
-    // 1. Change button to a "loading" state
-    submitBtn.style.backgroundColor = '#eab308'; // Yellow flag color
-    submitBtn.style.color = '#000';
-    btnSpan.textContent = "Transmitting to Pit Wall...";
-    submitBtn.disabled = true;
 
-    // 2. Simulate sending the data (2-second delay)
+    /* Show confirmation */
+
+    toast.classList.add("show");
+
+
     setTimeout(() => {
-        // 3. Show success state (Green Light)
-        submitBtn.style.backgroundColor = '#16a34a'; // Green flag color
-        submitBtn.style.color = '#fff';
-        btnSpan.textContent = "GREEN LIGHT! Booking Secured.";
-        
-        // 4. Reset the form fields
-        bookingForm.reset();
 
-        // 5. Reset button back to normal after 4 seconds
-        setTimeout(() => {
-            submitBtn.style.backgroundColor = ''; // Reverts to CSS default (Red)
-            submitBtn.disabled = false;
-            btnSpan.textContent = "Send to Race Control";
-        }, 4000);
+        toast.classList.remove("show");
 
-    }, 2000);
-});
+    }, 2200);
+
+
+    /* Scroll directly to payment */
+
+    setTimeout(() => {
+
+        paymentSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 150);
+
+}
+
+
+/* =========================
+   BOOK NOW BUTTONS
+========================= */
+
+document
+    .querySelectorAll("[data-payment]")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            goToPayment(
+                "Grand Prix",
+                "119"
+            );
+
+        });
+
+    });
+
+
+/* =========================
+   PACKAGE BUTTONS
+========================= */
+
+document
+    .querySelectorAll(".choose")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const packageName =
+                button.dataset.package;
+
+            const packagePrice =
+                button.dataset.price;
+
+
+            goToPayment(
+                packageName,
+                packagePrice
+            );
+
+        });
+
+    });
+
+
+/* =========================
+   DATE
+========================= */
+
+const dateInput =
+    document.getElementById("raceDate");
+
+
+const tomorrow =
+    new Date();
+
+tomorrow.setDate(
+    tomorrow.getDate() + 1
+);
+
+
+dateInput.min =
+    tomorrow.toISOString()
+        .split("T")[0];
+
+
+/* =========================
+   PAYMENT FORM
+========================= */
+
+const paymentForm =
+    document.getElementById("paymentForm");
+
+
+paymentForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document
+                .getElementById("driverName")
+                .value
+                .trim();
+
+
+        if (!name) {
+            return;
+        }
+
+
+        /*
+            THIS IS WHERE YOU CONNECT
+            STRIPE / PAYPAL / OTHER
+            PAYMENT PROCESSING.
+        */
+
+        alert(
+            `Thanks ${name}! Your booking details are ready for payment.`
+        );
+
+    }
+);
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(event) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    });
+    /* =========================
+   APEX F4 BOOKING SYSTEM
+========================= */
+
+const paymentSection =
+    document.getElementById("payment");
+
+const toast =
+    document.getElementById("toast");
+
+const selectedPackage =
+    document.getElementById("selectedPackage");
+
+const packageName =
+    document.getElementById("packageName");
+
+const packagePrice =
+    document.getElementById("packagePrice");
+
+const totalPrice =
+    document.getElementById("totalPrice");
+
+
+/* =========================
+   GO TO PAYMENT
+========================= */
+
+function goToPayment(
+    raceName = "Grand Prix",
+    racePrice = "119"
+) {
+
+    selectedPackage.textContent =
+        raceName.toUpperCase();
+
+    packageName.textContent =
+        raceName;
+
+    packagePrice.textContent =
+        racePrice;
+
+    totalPrice.textContent =
+        racePrice;
+
+
+    /* Show confirmation */
+
+    toast.classList.add("show");
+
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2200);
+
+
+    /* Scroll directly to payment */
+
+    setTimeout(() => {
+
+        paymentSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 150);
+
+}
+
+
+/* =========================
+   BOOK NOW BUTTONS
+========================= */
+
+document
+    .querySelectorAll("[data-payment]")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            goToPayment(
+                "Grand Prix",
+                "119"
+            );
+
+        });
+
+    });
+
+
+/* =========================
+   PACKAGE BUTTONS
+========================= */
+
+document
+    .querySelectorAll(".choose")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const packageName =
+                button.dataset.package;
+
+            const packagePrice =
+                button.dataset.price;
+
+
+            goToPayment(
+                packageName,
+                packagePrice
+            );
+
+        });
+
+    });
+
+
+/* =========================
+   DATE
+========================= */
+
+const dateInput =
+    document.getElementById("raceDate");
+
+
+const tomorrow =
+    new Date();
+
+tomorrow.setDate(
+    tomorrow.getDate() + 1
+);
+
+
+dateInput.min =
+    tomorrow.toISOString()
+        .split("T")[0];
+
+
+/* =========================
+   PAYMENT FORM
+========================= */
+
+const paymentForm =
+    document.getElementById("paymentForm");
+
+
+paymentForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document
+                .getElementById("driverName")
+                .value
+                .trim();
+
+
+        if (!name) {
+            return;
+        }
+
+
+        /*
+            THIS IS WHERE YOU CONNECT
+            STRIPE / PAYPAL / OTHER
+            PAYMENT PROCESSING.
+        */
+
+        alert(
+            `Thanks ${name}! Your booking details are ready for payment.`
+        );
+
+    }
+);
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(event) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    });
