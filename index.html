@@ -1,647 +1,344 @@
-/* =========================
-   PAYMENT SECTION
-========================= */
-
-.payment-section {
-    background:
-        linear-gradient(135deg, #080808, #15151e);
-    padding: 6rem 5%;
-    border-top: 4px solid var(--f1-red);
-}
-
-.payment-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.payment-title {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-.payment-title span {
-    color: var(--f1-red);
-}
-
-.payment-subtitle {
-    color: #999;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-}
-
-.payment-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 2rem;
-}
-
-.payment-form {
-    background: #222;
-    padding: 2.5rem;
-    border-top: 4px solid var(--f1-red);
-}
-
-.payment-form h3 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.payment-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.payment-group {
-    margin-bottom: 1.5rem;
-}
-
-.payment-group label {
-    display: block;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.payment-group input,
-.payment-group select {
-    width: 100%;
-    padding: 1rem;
-    background: #111;
-    color: white;
-    border: 1px solid #444;
-    outline: none;
-}
-
-.payment-group input:focus,
-.payment-group select:focus {
-    border-color: var(--f1-red);
-}
-
-.payment-check {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-}
-
-.payment-button {
-    width: 100%;
-    background: var(--f1-red);
-    color: white;
-    border: none;
-    padding: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.payment-button:hover {
-    background: #ff1e16;
-}
-
-.order-summary {
-    background: #111;
-    padding: 2.5rem;
-    border-top: 4px solid #ffb703;
-    height: fit-content;
-}
-
-.order-summary h3 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-
-.order-line {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    border-bottom: 1px solid #333;
-}
-
-.order-line span:first-child {
-    color: #888;
-}
-
-.order-total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-}
-
-.order-total span:last-child {
-    color: var(--f1-red);
-}
-
-.terms-section {
-    background: #080808;
-    padding: 5rem 5%;
-}
-
-.terms-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.terms-container h2 {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
-.terms-container h2 span {
-    color: var(--f1-red);
-}
-
-.terms-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.term {
-    background: #15151e;
-    padding: 1.5rem;
-}
-
-.term h3 {
-    font-family: var(--font-display);
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.term p {
-    color: #888;
-}
-
-@media (max-width: 768px) {
-
-    .payment-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .payment-row {
-        grid-template-columns: 1fr;
-    }
-
-    .payment-title {
-        font-size: 3rem;
-    }
-
-    .terms-grid {
-        grid-template-columns: 1fr;
-    }
-}
-<!-- =========================
-     PAYMENT
-========================= -->
-
-<section class="payment-section" id="payment">
-
-    <div class="payment-container">
-
-        <h2 class="payment-title">
-            Secure Your <span>Grid</span>
-        </h2>
-
-        <p class="payment-subtitle">
-            Choose your session, enter your details and continue
-            to payment.
-        </p>
-
-
-        <div class="payment-grid">
-
-            <!-- PAYMENT FORM -->
-
-            <form class="payment-form" id="payment-form">
-
-                <h3>Driver Details</h3>
-
-                <div class="payment-row">
-
-                    <div class="payment-group">
-
-                        <label for="driver-name">
-                            Driver Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="driver-name"
-                            name="driver-name"
-                            placeholder="Your name"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="payment-group">
-
-                        <label for="driver-email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="driver-email"
-                            name="driver-email"
-                            placeholder="you@example.com"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <div class="payment-row">
-
-                    <div class="payment-group">
-
-                        <label for="race-date">
-                            Race Date
-                        </label>
-
-                        <input
-                            type="date"
-                            id="race-date"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="payment-group">
-
-                        <label for="race-package">
-                            Race Package
-                        </label>
-
-                        <select
-                            id="race-package"
-                            required
-                        >
-
-                            <option value="">
-                                Select Package
-                            </option>
-
-                            <option
-                                value="Q1 Sprint"
-                                data-price="89"
-                            >
-                                Q1 Sprint — $89
-                            </option>
-
-                            <option
-                                value="Grand Prix"
-                                data-price="159"
-                            >
-                                Grand Prix — $159
-                            </option>
-
-                            <option
-                                value="Endurance"
-                                data-price="299"
-                            >
-                                Endurance — $299
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <label class="payment-check">
-
-                    <input
-                        type="checkbox"
-                        required
-                    >
-
-                    I agree to the Terms & Conditions.
-
-                </label>
-
-
-                <button
-                    type="submit"
-                    class="payment-button"
-                >
-                    CONTINUE TO PAYMENT →
-                </button>
-
-            </form>
-
-
-            <!-- ORDER SUMMARY -->
-
-            <div class="order-summary">
-
-                <h3>
-                    Your Race
-                </h3>
-
-                <div class="order-line">
-
-                    <span>
-                        Package
-                    </span>
-
-                    <strong id="summary-package">
-                        Select a package
-                    </strong>
-
-                </div>
-
-
-                <div class="order-line">
-
-                    <span>
-                        Race date
-                    </span>
-
-                    <strong id="summary-date">
-                        —
-                    </strong>
-
-                </div>
-
-
-                <div class="order-total">
-
-                    <span>
-                        TOTAL
-                    </span>
-
-                    <span>
-                        $<span id="summary-price">0</span>
-                        AUD
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     TERMS
-========================= -->
-
-<section class="terms-section">
-
-    <div class="terms-container">
-
-        <h2>
-            Terms & <span>Conditions</span>
-        </h2>
-
-
-        <div class="terms-grid">
-
-            <div class="term">
-
-                <h3>
-                    DRIVER REQUIREMENTS
-                </h3>
-
-                <p>
-                    Drivers must meet the venue's age,
-                    height and safety requirements.
-                </p>
-
-            </div>
-
-
-            <div class="term">
-
-                <h3>
-                    SAFETY
-                </h3>
-
-                <p>
-                    All drivers must follow staff
-                    instructions and safety procedures.
-                </p>
-
-            </div>
-
-
-            <div class="term">
-
-                <h3>
-                    BOOKINGS
-                </h3>
-
-                <p>
-                    Bookings are subject to availability.
-                    Please arrive before your session.
-                </p>
-
-            </div>
-
-
-            <div class="term">
-
-                <h3>
-                    WEATHER
-                </h3>
-
-                <p>
-                    Sessions may change or be cancelled
-                    because of unsafe weather conditions.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<script>
-
-const paymentSection =
-    document.getElementById("payment");
-
-const paymentForm =
-    document.getElementById("payment-form");
-
-const packageSelect =
-    document.getElementById("race-package");
-
-const summaryPackage =
-    document.getElementById("summary-package");
-
-const summaryPrice =
-    document.getElementById("summary-price");
-
-const summaryDate =
-    document.getElementById("summary-date");
-
-
-/* UPDATE ORDER SUMMARY */
-
-packageSelect.addEventListener("change", function () {
-
-    const option =
-        this.options[this.selectedIndex];
-
-    const packageName =
-        option.value;
-
-    const packagePrice =
-        option.dataset.price || 0;
-
-    summaryPackage.textContent =
-        packageName || "Select a package";
-
-    summaryPrice.textContent =
-        packagePrice;
-
-});
-
-
-/* DATE UPDATE */
-
-document
-    .getElementById("race-date")
-    .addEventListener("change", function () {
-
-        summaryDate.textContent =
-            this.value;
-
-    });
-
-
-/* SEND USER TO PAYMENT */
-
-function openPayment() {
-
-    paymentSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-
-/*
-   THIS MAKES ALL YOUR EXISTING
-   BOOKING BUTTONS GO TO PAYMENT.
-
-   It works with:
-   .btn
-   .book-btn
-   .booking-btn
-*/
-
-document
-    .querySelectorAll(
-        ".btn, .book-btn, .booking-btn"
-    )
-    .forEach(function (button) {
-
-        const text =
-            button.textContent.toLowerCase();
-
-        if (
-            text.includes("book") ||
-            text.includes("sprint") ||
-            text.includes("grand prix") ||
-            text.includes("endurance")
-        ) {
-
-            button.addEventListener(
-                "click",
-                function (event) {
-
-                    /*
-                       Only intercept buttons that
-                       aren't normal navigation links.
-                    */
-
-                    const href =
-                        button.getAttribute("href");
-
-                    if (
-                        !href ||
-                        href === "#" ||
-                        href.includes("booking")
-                    ) {
-
-                        event.preventDefault();
-
-                        openPayment();
-
-                    }
-
-                }
-            );
-
-        }
-
-    });
-
-
-/* PAYMENT FORM */
-
-paymentForm.addEventListener(
-    "submit",
-    function (event) {
-
-        event.preventDefault();
-
-        const selected =
-            packageSelect.value;
-
-        if (!selected) {
-
-            alert(
-                "Please select a race package."
-            );
-
-            return;
-
-        }
-
-
-        /*
-           THIS IS THE PLACE TO CONNECT
-           STRIPE / PAYPAL.
-
-           For now it confirms the booking.
-        */
-
-        alert(
-            "Race selected! Next step: payment."
-        );
-
-    }
-);
-
-</script>
-</html>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GoCarting 2026 — Race Day Bookings</title>
+  <meta name="description" content="Book your go-karting session. Sprint, Grand Prix and Endurance packages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <a class="logo" href="#top">GO<span>CARTING</span> 2026</a>
+    <nav>
+      <a href="#packages">Packages</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#book">Book</a>
+      <a href="#terms">Terms</a>
+    </nav>
+    <a class="btn btn-small" href="#book">Book now</a>
+  </header>
+
+  <section class="hero">
+    <div class="photo hero-photo" data-img="images/hero.jpg" data-label="Hero photo"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Season 2026 · Now racing</p>
+      <h1>Lights out.<br><span>Full throttle.</span></h1>
+      <p class="lead">Real karts. Real speed. Pick your session and take the grid.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#book">Secure your grid</a>
+        <a class="btn btn-ghost" href="#packages">See packages</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div><strong>3</strong><span>Race packages</span></div>
+    <div><strong>60+</strong><span>km/h top speed</span></div>
+    <div><strong>Daily</strong><span>Sessions</span></div>
+    <div><strong>Pro</strong><span>Safety gear</span></div>
+  </section>
+
+  <section class="section" id="packages">
+    <h2 class="title">Choose your <span>race</span></h2>
+    <div class="cards">
+      <article class="card" data-package="sprint">
+        <div class="photo card-photo" data-img="images/sprint.jpg" data-label="Sprint photo"></div>
+        <div class="card-body">
+          <h3>Q1 Sprint</h3>
+          <p class="price">$89 <small>AUD</small></p>
+          <ul>
+            <li>Short, sharp qualifying run</li>
+            <li>Helmet &amp; race suit included</li>
+            <li>Lap time printout</li>
+          </ul>
+          <button class="btn btn-block pick" data-value="sprint">Select Sprint</button>
+        </div>
+      </article>
+
+      <article class="card featured" data-package="gp">
+        <span class="badge">Most popular</span>
+        <div class="photo card-photo" data-img="images/grandprix.jpg" data-label="Grand Prix photo"></div>
+        <div class="card-body">
+          <h3>Grand Prix</h3>
+          <p class="price">$159 <small>AUD</small></p>
+          <ul>
+            <li>Qualifying + full race</li>
+            <li>Live timing screen</li>
+            <li>Podium photo</li>
+          </ul>
+          <button class="btn btn-block pick" data-value="gp">Select Grand Prix</button>
+        </div>
+      </article>
+
+      <article class="card" data-package="endurance">
+        <div class="photo card-photo" data-img="images/endurance.jpg" data-label="Endurance photo"></div>
+        <div class="card-body">
+          <h3>Endurance</h3>
+          <p class="price">$299 <small>AUD</small></p>
+          <ul>
+            <li>Long-format team race</li>
+            <li>Driver changes &amp; pit stops</li>
+            <li>Full results sheet</li>
+          </ul>
+          <button class="btn btn-block pick" data-value="endurance">Select Endurance</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section dark" id="gallery">
+    <h2 class="title">On the <span>grid</span></h2>
+    <div class="gallery">
+      <div class="photo g1" data-img="images/gallery1.jpg" data-label="Gallery 1"></div>
+      <div class="photo g2" data-img="images/gallery2.jpg" data-label="Gallery 2"></div>
+      <div class="photo g3" data-img="images/gallery3.jpg" data-label="Gallery 3"></div>
+      <div class="photo g4" data-img="images/gallery4.jpg" data-label="Gallery 4"></div>
+      <div class="photo g5" data-img="images/gallery5.jpg" data-label="Gallery 5"></div>
+    </div>
+  </section>
+
+  <section class="payment-section" id="book">
+    <div class="payment-container">
+      <h2 class="payment-title">Secure your <span>grid</span></h2>
+      <p class="payment-subtitle">Choose your session, enter your details and continue to payment.</p>
+
+      <div class="payment-grid">
+        <form class="payment-form" id="bookingForm" novalidate>
+          <h3>Driver details</h3>
+
+          <div class="payment-group">
+            <label for="name">Driver name</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Full name">
+            <small class="error" data-for="name"></small>
+          </div>
+
+          <div class="payment-row">
+            <div class="payment-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+              <small class="error" data-for="email"></small>
+            </div>
+            <div class="payment-group">
+              <label for="date">Race date</label>
+              <input type="date" id="date" name="date">
+              <small class="error" data-for="date"></small>
+            </div>
+          </div>
+
+          <div class="payment-row">
+            <div class="payment-group">
+              <label for="package">Race package</label>
+              <select id="package" name="package">
+                <option value="">Select package</option>
+                <option value="sprint">Q1 Sprint — $89</option>
+                <option value="gp">Grand Prix — $159</option>
+                <option value="endurance">Endurance — $299</option>
+              </select>
+              <small class="error" data-for="package"></small>
+            </div>
+            <div class="payment-group">
+              <label for="drivers">Drivers</label>
+              <select id="drivers" name="drivers">
+                <option value="1">1 driver</option>
+                <option value="2">2 drivers</option>
+                <option value="3">3 drivers</option>
+                <option value="4">4 drivers</option>
+                <option value="5">5 drivers</option>
+                <option value="6">6 drivers</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="payment-check">
+            <input type="checkbox" id="terms">
+            <span>I agree to the <a href="#terms">Terms &amp; Conditions</a>.</span>
+          </label>
+          <small class="error" data-for="terms"></small>
+
+          <button type="submit" class="payment-button">Continue to payment →</button>
+        </form>
+
+        <aside class="order-summary">
+          <h3>Your race</h3>
+          <div class="order-line"><span>Package</span><span id="sumPackage">Select a package</span></div>
+          <div class="order-line"><span>Race date</span><span id="sumDate">—</span></div>
+          <div class="order-line"><span>Drivers</span><span id="sumDrivers">1</span></div>
+          <div class="order-total"><span>TOTAL</span><span id="sumTotal">$0 AUD</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="terms-section" id="terms">
+    <div class="terms-container">
+      <h2>Terms &amp; <span>Conditions</span></h2>
+      <div class="terms-grid">
+        <div class="term"><h3>Driver requirements</h3><p>Drivers must meet the venue's age, height and safety requirements.</p></div>
+        <div class="term"><h3>Safety</h3><p>All drivers must follow staff instructions and safety procedures.</p></div>
+        <div class="term"><h3>Bookings</h3><p>Bookings are subject to availability. Please arrive before your session.</p></div>
+        <div class="term"><h3>Weather</h3><p>Sessions may change or be cancelled because of unsafe weather conditions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 GoCarting. Race responsibly.</p>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">You're on the grid 🏁</h3>
+      <p id="modalText"></p>
+      <button class="btn btn-block" id="modalClose">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+(function () {
+  "use strict";
+
+  var PACKAGES = {
+    sprint:    { name: "Q1 Sprint",  price: 89 },
+    gp:        { name: "Grand Prix", price: 159 },
+    endurance: { name: "Endurance",  price: 299 }
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $("bookingForm");
+  var fields = {
+    name: $("name"), email: $("email"), date: $("date"),
+    package: $("package"), drivers: $("drivers"), terms: $("terms")
+  };
+
+  /* ---------- Photos: use image if it exists, else show placeholder ---------- */
+  document.querySelectorAll(".photo[data-img]").forEach(function (el) {
+    var src = el.getAttribute("data-img");
+    var img = new Image();
+    img.onload = function () {
+      el.style.backgroundImage = "url('" + src + "')";
+    };
+    img.onerror = function () {
+      el.classList.add("missing");
+    };
+    img.src = src;
+  });
+
+  /* ---------- Date: no past dates ---------- */
+  var today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  fields.date.min = today.toISOString().split("T")[0];
+
+  /* ---------- Live order summary ---------- */
+  function formatDate(value) {
+    if (!value) return "—";
+    var parts = value.split("-");
+    var d = new Date(parts[0], parts[1] - 1, parts[2]);
+    return d.toLocaleDateString("en-AU", {
+      weekday: "short", day: "numeric", month: "short", year: "numeric"
+    });
+  }
+
+  function updateSummary() {
+    var pkg = PACKAGES[fields.package.value];
+    var drivers = parseInt(fields.drivers.value, 10) || 1;
+    $("sumPackage").textContent = pkg ? pkg.name : "Select a package";
+    $("sumDate").textContent = formatDate(fields.date.value);
+    $("sumDrivers").textContent = drivers;
+    $("sumTotal").textContent = "$" + (pkg ? pkg.price * drivers : 0) + " AUD";
+
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.classList.toggle("selected", card.getAttribute("data-package") === fields.package.value);
+    });
+  }
+
+  ["package", "date", "drivers"].forEach(function (k) {
+    fields[k].addEventListener("change", updateSummary);
+  });
+
+  /* ---------- "Select" buttons on package cards ---------- */
+  document.querySelectorAll(".pick").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      fields.package.value = btn.getAttribute("data-value");
+      updateSummary();
+      clearError("package");
+      $("book").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  /* ---------- Validation ---------- */
+  function setError(key, msg) {
+    var el = document.querySelector('.error[data-for="' + key + '"]');
+    if (el) el.textContent = msg;
+    if (fields[key] && fields[key].type !== "checkbox") fields[key].classList.add("invalid");
+  }
+  function clearError(key) {
+    var el = document.querySelector('.error[data-for="' + key + '"]');
+    if (el) el.textContent = "";
+    if (fields[key]) fields[key].classList.remove("invalid");
+  }
+
+  function validate() {
+    var ok = true;
+    Object.keys(fields).forEach(clearError);
+
+    if (fields.name.value.trim().length < 2) { setError("name", "Enter the driver's name."); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim())) { setError("email", "Enter a valid email."); ok = false; }
+    if (!fields.date.value) { setError("date", "Pick a race date."); ok = false; }
+    else if (fields.date.value < fields.date.min) { setError("date", "Date can't be in the past."); ok = false; }
+    if (!fields.package.value) { setError("package", "Choose a package."); ok = false; }
+    if (!fields.terms.checked) { setError("terms", "You must accept the terms."); ok = false; }
+    return ok;
+  }
+
+  ["name", "email", "date", "package", "terms"].forEach(function (k) {
+    fields[k].addEventListener("input", function () { clearError(k); });
+    fields[k].addEventListener("change", function () { clearError(k); });
+  });
+
+  /* ---------- Submit ---------- */
+  var modal = $("modal");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!validate()) {
+      var firstBad = form.querySelector(".invalid") || fields.terms;
+      firstBad.focus();
+      return;
+    }
+
+    var pkg = PACKAGES[fields.package.value];
+    var drivers = parseInt(fields.drivers.value, 10);
+    var booking = {
+      name: fields.name.value.trim(),
+      email: fields.email.value.trim(),
+      date: fields.date.value,
+      package: fields.package.value,
+      drivers: drivers,
+      total: pkg.price * drivers
+    };
+
+    // TODO: replace this block with your real payment link / checkout call, e.g.
+    // window.location.href = "https://your-payment-link?amount=" + booking.total;
+    console.log("Booking ready for payment:", booking);
+
+    $("modalText").textContent =
+      booking.name + ", your " + pkg.name + " is pencilled in for " + formatDate(booking.date) + ".\n" +
+      drivers + (drivers === 1 ? " driver" : " drivers") + " · Total $" + booking.total + " AUD\n\n" +
+      "Payment isn't connected yet — add your payment link in script.js.";
+    modal.hidden = false;
+  });
+
+  $("modalClose").addEventListener("click", function () { modal.hidden = true; });
+  modal.addEventListener("click", function (e) { if (e.target === modal) modal.hidden = true; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") modal.hidden = true; });
+
+  updateSummary();
+})();
