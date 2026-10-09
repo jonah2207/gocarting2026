@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0c">
+<title>APEX F4 Racing | Sunshine Coast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e10600;--dark:#09090b;--panel:#151519;--muted:#a7a7ae;--line:#303036;--gold:#ffc400;--display:'Racing Sans One',sans-serif;--body:'Titillium Web',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--dark);color:#f5f5f7;font-family:var(--body);line-height:1.6}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1180px,90%);margin:auto}
+.eyebrow{color:var(--red);font-weight:900;letter-spacing:3px;text-transform:uppercase;font-size:.8rem}
+.section{padding:88px 0}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:32px}
+h2{font:clamp(2.4rem,5vw,4rem)/1.05 var(--display);text-transform:uppercase}
+h2 span,.accent{color:var(--red)}
+.section-intro{max-width:550px;color:var(--muted);margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;background:var(--red);color:white;border:0;font-weight:900;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.2s}
+.btn:hover{background:#ff2b23;transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid #777}
+.btn-outline:hover{background:#fff;color:#111}
+nav{height:78px;position:sticky;top:0;z-index:20;background:rgba(8,8,10,.94);backdrop-filter:blur(12px);border-bottom:1px solid #29292d}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:2rem var(--display);letter-spacing:1px}.logo span{color:var(--red)}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:.88rem;font-weight:700;text-transform:uppercase}
+.nav-links a:hover{color:var(--red)}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:1.8rem}
+.hero{min-height:650px;display:flex;align-items:center;position:relative;isolation:isolate;background:#101014;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,4,6,.97) 0%,rgba(4,4,6,.76) 43%,rgba(4,4,6,.12) 100%),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85');background-size:cover;background-position:center}
+.hero:after{content:"";position:absolute;z-index:-1;left:0;bottom:0;width:100%;height:5px;background:var(--red)}
+.hero-content{padding:100px 0;max-width:730px}
+.hero h1{font:clamp(3.5rem,8vw,7.6rem)/.92 var(--display);text-transform:uppercase;letter-spacing:-1px;margin:18px 0 25px}
+.hero h1 span{color:var(--red);display:block}
+.hero p{max-width:570px;color:#d0d0d4;font-size:1.15rem;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-stats{display:flex;gap:30px;margin-top:48px;flex-wrap:wrap}
+.stat{border-left:3px solid var(--red);padding-left:13px}
+.stat strong{display:block;font:1.8rem var(--display)}.stat small{color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.ticker{background:var(--red);overflow:hidden;white-space:nowrap;padding:11px 0;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.ticker span{padding:0 24px}
+.fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fleet-card{background:var(--panel);border:1px solid #27272c;overflow:hidden;transition:.25s}
+.fleet-card:hover{transform:translateY(-5px);border-color:var(--red)}
+.fleet-card img{height:220px;transition:transform .4s}.fleet-card:hover img{transform:scale(1.04)}
+.card-copy{padding:23px}
+.card-copy h3{font:1.55rem var(--display);text-transform:uppercase;margin-bottom:8px}
+.card-copy p{color:var(--muted);font-size:.97rem}
+.specs{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.spec{font-size:.78rem;border:1px solid #424249;padding:5px 8px;color:#ddd;text-transform:uppercase}
+.experience{background:linear-gradient(100deg,#141418,#0b0b0d);border-block:1px solid #2a2a30}
+.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.experience-photo{position:relative}
+.experience-photo img{height:430px}
+.photo-label{position:absolute;left:0;bottom:0;background:var(--red);padding:12px 18px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
+.feature-list{display:grid;gap:20px;margin:28px 0}
+.feature{display:grid;grid-template-columns:42px 1fr;gap:14px}
+.feature-icon{width:42px;height:42px;background:#25252b;display:grid;place-items:center;color:var(--red);font-size:1.3rem;font-weight:900}
+.feature h3{font-size:1.1rem;text-transform:uppercase}.feature p{color:var(--muted);font-size:.95rem}
+.track-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.track-main{position:relative;min-height:420px;overflow:hidden}
+.track-main img{position:absolute;inset:0;height:100%}
+.track-main:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent 70%)}
+.track-main-copy{position:absolute;z-index:1;bottom:25px;left:25px;right:25px}
+.track-main-copy h3{font:2rem var(--display);text-transform:uppercase}
+.track-main-copy p{color:#ddd;max-width:520px}
+.track-side{display:grid;gap:18px}
+.track-point{display:grid;grid-template-columns:115px 1fr;gap:17px;background:var(--panel);padding:13px;align-items:center}
+.track-point img{height:110px}
+.track-point h3{text-transform:uppercase;font-size:1.05rem}.track-point p{font-size:.9rem;color:var(--muted)}
+.packages{background:#101014}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.package{position:relative;background:#1a1a20;border:1px solid #36363d;padding:28px;display:flex;flex-direction:column}
+.package.featured{border:2px solid var(--red);transform:translateY(-8px)}
+.package-tag{position:absolute;top:0;right:0;background:var(--red);font-size:.72rem;font-weight:900;padding:6px 10px;text-transform:uppercase}
+.package h3{font:1.8rem var(--display);text-transform:uppercase}
+.package .price{font:3rem var(--display);margin:13px 0}.price small{font:600 .9rem var(--body);color:var(--muted)}
+.package>p{color:var(--muted);min-height:52px}
+.package ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px;flex:1}
+.package li:before{content:"✓";color:var(--red);font-weight:900;margin-right:9px}
+.package .btn{width:100%}
+.booking{background:linear-gradient(135deg,#16161b,#0b0b0d);border-top:4px solid var(--red)}
+.booking-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.form-panel,.summary-panel{background:#1a1a20;padding:30px;border:1px solid #33333a}
+.form-panel h3,.summary-panel h3{font:1.8rem var(--display);text-transform:uppercase;margin-bottom:22px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:17px}.field label{display:block;text-transform:uppercase;font-size:.8rem;font-weight:900;letter-spacing:.8px;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:13px;background:#0d0d10;color:white;border:1px solid #44444d;border-radius:0;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red)}
+.field select option{background:#111}
+.checkline{display:flex;align-items:flex-start;gap:10px;color:#c7c7cc;font-size:.9rem;margin:8px 0 20px}.checkline input{margin-top:6px;accent-color:var(--red)}
+.summary-panel{background:#0d0d10;border-top:4px solid var(--gold);height:max-content}
+.summary-panel img{height:190px;margin-bottom:22px}
+.summary-line{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid #303036}
+.summary-line span:first-child{color:var(--muted)}
+.summary-total{display:flex;justify-content:space-between;align-items:center;font:1.7rem var(--display);padding-top:22px}
+.summary-total strong{color:var(--red)}
+.payment-note{font-size:.83rem;color:var(--muted);margin-top:18px}
+.terms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.term{padding:20px;background:var(--panel);border-top:2px solid #38383f}
+.term h3{font-size:1rem;text-transform:uppercase;margin-bottom:8px}.term p{color:var(--muted);font-size:.9rem}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{background:var(--panel);padding:19px 21px;border:1px solid #2d2d33}
+summary{font-weight:900;text-transform:uppercase;cursor:pointer}
+details p{color:var(--muted);padding-top:12px}
+footer{border-top:1px solid #303036;padding:38px 0;background:#070708}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
+.footer-inner p{color:var(--muted);font-size:.88rem}.footer-links{display:flex;gap:18px;color:#ccc;font-size:.9rem}
+.notice{color:#ffc400;font-size:.85rem;margin-top:12px;display:none}
+@media(max-width:850px){.nav-links{gap:13px;font-size:.75rem}.fleet-grid,.package-grid{grid-template-columns:1fr 1fr}.experience-grid,.track-grid,.booking-grid{grid-template-columns:1fr}.terms-grid{grid-template-columns:1fr 1fr}.package.featured{transform:none}}
+@media(max-width:620px){.section{padding:65px 0}.nav-inner{width:92%}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:77px;left:0;right:0;background:#0b0b0d;padding:20px 5%;flex-direction:column;align-items:stretch;border-bottom:1px solid #333}.nav-links.open{display:flex}.nav-links .btn{width:100%}.hero{min-height:620px}.hero-content{padding:75px 0}.hero-stats{gap:18px}.fleet-grid,.package-grid,.terms-grid,.faq-grid{grid-template-columns:1fr}.section-heading{display:block}.section-heading>.btn{margin-top:20px}.form-row{grid-template-columns:1fr;gap:0}.form-panel,.summary-panel{padding:22px}.track-point{grid-template-columns:95px 1fr}.track-point img{height:100px}.experience-photo img{height:300px}.package>p{min-height:0}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">APEX<span>F4</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#fleet">The Car</a><a href="#experience">Experience</a><a href="#track">Circuit</a><a href="#packages">Packages</a><a href="#faq">FAQ</a>
+      <a class="btn" href="#booking">Book a Session ↗</a>
+    </div>
+  </div>
+</nav>
+<header class="hero" id="home">
+  <div class="container hero-content">
+    <div class="eyebrow">Sunshine Coast • Queensland • Motorsport experience</div>
+    <h1>Feel the <span>Downforce.</span></h1>
+    <p>Get closer to real single-seater racing. Strap into an F4-inspired open-wheel car, learn the racing line and experience the speed, precision and focus of a proper circuit session.</p>
+    <div class="hero-actions"><a class="btn" href="#packages">Choose Your Race →</a><a class="btn btn-outline" href="#experience">Explore the Experience</a></div>
+    <div class="hero-stats">
+      <div class="stat"><strong>F4</strong><small>Open-wheel style</small></div>
+      <div class="stat"><strong>1:1</strong><small>Driver focus</small></div>
+      <div class="stat"><strong>FULL</strong><small>Race-day atmosphere</small></div>
+    </div>
+  </div>
+</header>
+<div class="ticker"><span>APEX F4</span> ◆ FIND YOUR RACING LINE ◆ <span>APEX F4</span> ◆ EVERY LAP COUNTS ◆ <span>APEX F4</span> ◆</div>
+
+<section class="section" id="fleet">
+  <div class="container">
+    <div class="section-heading"><div><div class="eyebrow">Built for the feeling</div><h2>Meet the <span>Machine.</span></h2><p class="section-intro">A low-slung, open-cockpit racing experience inspired by junior formula cars. Designed around control, feedback and the thrill of being close to the track.</p></div></div>
+    <div class="fleet-grid">
+      <article class="fleet-card"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Race circuit under dramatic skies"><div class="card-copy"><h3>Aero Package</h3><p>Open-wheel proportions, a low centre of gravity and race-inspired aero styling bring you closer to the circuit.</p><div class="specs"><span class="spec">Open wheel</span><span class="spec">Low profile</span><span class="spec">Track focused</span></div></div></article>
+      <article class="fleet-card"><img loading="lazy" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1000&q=85" alt="Modern motorsport facility"><div class="card-copy"><h3>Race Engineering</h3><p>Every session is about smooth inputs, braking points, acceleration and building confidence lap after lap.</p><div class="specs"><span class="spec">Driver coaching</span><span class="spec">Lap technique</span></div></div></article>
+      <article class="fleet-card"><img loading="lazy" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Performance sports car detail"><div class="card-copy"><h3>Driver Cockpit</h3><p>Feel connected to the car with a focused driving position and clear, easy-to-follow safety briefing.</p><div class="specs"><span class="spec">Race position</span><span class="spec">Safety first</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section experience" id="experience">
+  <div class="container experience-grid">
+    <div class="experience-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1532906619279-a4b7267faa66?auto=format&fit=crop&w=1300&q=85" alt="Motorsport car ready for the track"><div class="photo-label">Your grid. Your moment.</div></div>
+    <div><div class="eyebrow">More than a hot lap</div><h2>Think like a <span>Racer.</span></h2><p class="section-intro">From your first briefing to your final cool-down lap, the day is structured to make the experience exciting, approachable and memorable.</p>
+      <div class="feature-list">
+        <div class="feature"><div class="feature-icon">01</div><div><h3>Driver briefing</h3><p>Learn flags, track rules, controls and the safety procedures before heading out.</p></div></div>
+        <div class="feature"><div class="feature-icon">02</div><div><h3>Find the racing line</h3><p>Build rhythm through braking zones, apexes and exits with guidance suited to your session.</p></div></div>
+        <div class="feature"><div class="feature-icon">03</div><div><h3>Review your run</h3><p>Finish with a debrief, celebrate your progress and plan what to improve next time.</p></div></div>
+      </div><a class="btn" href="#booking">Get on the grid →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="track">
+  <div class="container">
+    <div class="section-heading"><div><div class="eyebrow">Every corner tells a story</div><h2>Know the <span>Circuit.</span></h2><p class="section-intro">A good lap is built from a series of small decisions. Learn to look ahead, stay smooth and make each corner count.</p></div></div>
+    <div class="track-grid">
+      <article class="track-main"><img loading="lazy" src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=85" alt="Performance car on a road"><div class="track-main-copy"><div class="eyebrow">Circuit guide</div><h3>Brake late. Turn once. Exit clean.</h3><p>Focus on consistency before chasing lap time. The fastest laps usually start with the cleanest fundamentals.</p></div></article>
+      <div class="track-side">
+        <article class="track-point"><img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=400&q=80" alt="Race car detail"><div><h3>Turn 1</h3><p>Set your braking point, look through the corner and stay composed.</p></div></article>
+        <article class="track-point"><img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=400&q=80" alt="Sport car front detail"><div><h3>The Hairpin</h3><p>Prioritise a tidy entry and a strong, controlled exit.</p></div></article>
+        <article class="track-point"><img loading="lazy" src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=400&q=80" alt="Car on a winding road"><div><h3>Final Sector</h3><p>Keep your hands smooth and link the corners together.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section packages" id="packages">
+  <div class="container">
+    <div class="section-heading"><div><div class="eyebrow">Pick your challenge</div><h2>Race <span>Packages.</span></h2><p class="section-intro">Choose the session that suits your appetite for speed. These are example prices for the website concept and can be changed to your real pricing.</p></div></div>
+    <div class="package-grid">
+      <article class="package"><h3>Q1 Sprint</h3><div class="price">$89 <small>AUD / driver</small></div><p>A first taste of the single-seater experience.</p><ul><li>Safety and driver briefing</li><li>Introductory track session</li><li>Basic driving tips</li><li>Post-session debrief</li></ul><button class="btn btn-outline choose-package" data-package="Q1 Sprint" data-price="89">Choose Sprint →</button></article>
+      <article class="package featured"><div class="package-tag">Most popular</div><h3>Grand Prix</h3><div class="price">$159 <small>AUD / driver</small></div><p>More time to learn, settle in and push your consistency.</p><ul><li>Full safety briefing</li><li>Extended driving session</li><li>Racing-line coaching</li><li>Performance debrief</li></ul><button class="btn choose-package" data-package="Grand Prix" data-price="159">Choose Grand Prix →</button></article>
+      <article class="package"><h3>Endurance</h3><div class="price">$299 <small>AUD / driver</small></div><p>A longer challenge for drivers who want to build rhythm.</p><ul><li>Detailed driver briefing</li><li>Extended track time</li><li>Technique-focused coaching</li><li>End-of-session review</li></ul><button class="btn btn-outline choose-package" data-package="Endurance" data-price="299">Choose Endurance →</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="section booking" id="booking">
+  <div class="container">
+    <div class="section-heading"><div><div class="eyebrow">Your race starts here</div><h2>Secure Your <span>Grid.</span></h2><p class="section-intro">Enter your details and choose a package. Your selection will appear in the order summary before you continue.</p></div></div>
+    <div class="booking-grid">
+      <form class="form-panel" id="booking-form">
+        <h3>Driver Details</h3>
+        <div class="form-row">
+          <div class="field"><label for="driver-name">Full name *</label><input id="driver-name" name="name" autocomplete="name" placeholder="Your full name" required></div>
+          <div class="field"><label for="driver-email">Email address *</label><input id="driver-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="race-date">Preferred date *</label><input id="race-date" name="date" type="date" required></div>
+          <div class="field"><label for="race-package">Race package *</label><select id="race-package" name="package" required><option value="">Choose a package</option><option value="Q1 Sprint" data-price="89">Q1 Sprint — $89</option><option value="Grand Prix" data-price="159">Grand Prix — $159</option><option value="Endurance" data-price="299">Endurance — $299</option></select></div>
+        </div>
+        <div class="field"><label for="drivers">Number of drivers</label><select id="drivers" name="drivers"><option value="1">1 driver</option><option value="2">2 drivers</option><option value="3">3 drivers</option><option value="4">4 drivers</option></select></div>
+        <div class="field"><label for="notes">Special requests (optional)</label><textarea id="notes" rows="3" placeholder="Tell us anything we should know before your session"></textarea></div>
+        <label class="checkline"><input type="checkbox" required><span>I have read and agree to the booking terms, safety requirements and venue rules.</span></label>
+        <button class="btn" type="submit" style="width:100%">Continue to payment →</button>
+        <p class="notice" id="form-notice">Demo only: connect a payment provider and booking backend before accepting real bookings.</p>
+      </form>
+      <aside class="summary-panel">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Performance car preview">
+        <div class="eyebrow">Order summary</div><h3>Your Race</h3>
+        <div class="summary-line"><span>Package</span><strong id="summary-package">Choose a package</strong></div>
+        <div class="summary-line"><span>Preferred date</span><strong id="summary-date">Not selected</strong></div>
+        <div class="summary-line"><span>Drivers</span><strong id="summary-drivers">1</strong></div>
+        <div class="summary-total"><span>TOTAL</span><strong id="summary-price">$0 AUD</strong></div>
+        <p class="payment-note">🔒 This demo does not collect card details or take payment. A secure payment gateway such as Stripe would need to be connected for live transactions. Final dates are subject to availability.</p>
+      </aside>
+    </div>
+    <div class="terms-grid">
+      <article class="term"><h3>Driver requirements</h3><p>Drivers must meet the venue's minimum age, height, health and licence requirements. Confirm the actual requirements before publishing.</p></article>
+      <article class="term"><h3>Safety first</h3><p>Follow all staff instructions, wear required safety equipment and obey track flags at all times.</p></article>
+      <article class="term"><h3>Bookings</h3><p>Requests are not confirmed until availability has been checked and the operator has confirmed the booking.</p></article>
+      <article class="term"><h3>Weather & changes</h3><p>Sessions may be delayed, rescheduled or cancelled if conditions are unsafe. Publish your real refund policy here.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container"><div class="section-heading"><div><div class="eyebrow">Before you race</div><h2>Quick <span>Answers.</span></h2></div></div>
+    <div class="faq-grid">
+      <details><summary>Do I need racing experience?</summary><p>No previous racing experience is assumed in this concept. The real operator should confirm which sessions are suitable for beginners.</p></details>
+      <details><summary>What should I wear?</summary><p>Wear comfortable clothing and closed-toe shoes. Follow the venue's instructions about helmets, suits and other safety equipment.</p></details>
+      <details><summary>Is this a confirmed booking?</summary><p>No. This is a front-end website demo. It does not check live availability, save bookings or take payment yet.</p></details>
+      <details><summary>Can I book for a group?</summary><p>The form lets you choose up to four drivers for the demo. Group booking rules and availability need to be connected to the real operator.</p></details>
+    </div>
+  </div>
+</section>
+<footer><div class="container footer-inner"><a class="logo" href="#home">APEX<span>F4</span></a><p>© 2026 APEX F4 Racing — Sunshine Coast concept website.</p><div class="footer-links"><a href="#terms">Terms</a><a href="#booking">Bookings</a><a href="#home">Back to top ↑</a></div></div></footer>
+<script>
+const toggle=document.getElementById('menu-toggle');
+const navLinks=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const packageSelect=document.getElementById('race-package');
+const dateInput=document.getElementById('race-date');
+const driversInput=document.getElementById('drivers');
+const summaryPackage=document.getElementById('summary-package');
+const summaryDate=document.getElementById('summary-date');
+const summaryDrivers=document.getElementById('summary-drivers');
+const summaryPrice=document.getElementById('summary-price');
+function updateSummary(){
+  const option=packageSelect.options[packageSelect.selectedIndex];
+  const price=Number(option.dataset.price||0);
+  const drivers=Number(driversInput.value||1);
+  summaryPackage.textContent=packageSelect.value||'Choose a package';
+  summaryDate.textContent=dateInput.value?new Date(dateInput.value+'T12:00:00').toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'}):'Not selected';
+  summaryDrivers.textContent=String(drivers);
+  summaryPrice.textContent='$'+(price*drivers).toLocaleString('en-AU')+' AUD';
+}
+[packageSelect,dateInput,driversInput].forEach(el=>el.addEventListener('change',updateSummary));
+document.querySelectorAll('.choose-package').forEach(btn=>btn.addEventListener('click',()=>{
+  packageSelect.value=btn.dataset.package;updateSummary();document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+}));
+dateInput.min=new Date().toISOString().split('T')[0];
+document.getElementById('booking-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!packageSelect.value){packageSelect.focus();return;}
+  const notice=document.getElementById('form-notice');
+  notice.style.display='block';
+  notice.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+</script>
+</body>
+</html>
